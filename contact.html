@@ -1,41 +1,38 @@
 <!doctype html>
-<!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Fri Jan 30 2026 05:51:54 GMT+0000 (Coordinated Universal Time) -->
 <html
-    data-wf-domain="bewellfed-wbs.webflow.io"
-    data-wf-page="62b1b5c13e38dbd81fe58da0"
+    data-wf-domain="mdee-website.vercel.app"
+    data-wf-page="62b1bb976bac756030d42b3d"
     data-wf-site="62b03a7e084ea567885272c1"
     lang="en"
 >
     <head>
         <meta charset="utf-8" />
         <link crossorigin="anonymous" href="https://cdn.prod.website-files.com" rel="preconnect" />
-        <title>beWellfed - Webflow Ecommerce website template</title>
+        <title>Contact M’Dee — Tasek Gelugor, Pulau Pinang</title>
         <meta
-            content="beWellfed is a food website CMS and eCommerce template. Suitable for a food delivery company, organic food shops, and other food-related service websites."
+            content="Contact M’Dee. WhatsApp or call 016-4432630, or visit the kitchen at Kompleks Perda Food Park, Tasek Gelugor, Pulau Pinang. Stockist and bulk orders welcome."
             name="description"
         />
-        <meta content="beWellfed - Webflow Ecommerce website template" property="og:title" />
+        <meta content="M’Dee — Rahsia rasa ori Penang" property="og:title" />
         <meta
-            content="beWellfed is a food website CMS and eCommerce template. Suitable for a food delivery company, organic food shops, and other food-related service websites."
+            content="Contact M’Dee. WhatsApp or call 016-4432630, or visit the kitchen at Kompleks Perda Food Park, Tasek Gelugor, Pulau Pinang. Stockist and bulk orders welcome."
             property="og:description"
         />
+        <meta content="https://mdee-website.vercel.app/contact.html" property="og:url" />
+        <meta content="M’Dee" property="og:site_name" />
+        <meta content="https://mdee-website.vercel.app/asset/og-image.jpg" property="og:image" />
+        <meta content="1200" property="og:image:width" />
+        <meta content="630" property="og:image:height" />
+        <meta content="M’Dee — Penang char koay teow sauce, pastes and sambal" property="og:image:alt" />
+        <meta content="M’Dee — Rahsia rasa ori Penang" name="twitter:title" />
         <meta
-            content="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfede84bbb9c02a8273150_open-graph.jpg"
-            property="og:image"
-        />
-        <meta content="beWellfed - Webflow Ecommerce website template" name="twitter:title" />
-        <meta
-            content="beWellfed is a food website CMS and eCommerce template. Suitable for a food delivery company, organic food shops, and other food-related service websites."
+            content="Contact M’Dee. WhatsApp or call 016-4432630, or visit the kitchen at Kompleks Perda Food Park, Tasek Gelugor, Pulau Pinang. Stockist and bulk orders welcome."
             name="twitter:description"
         />
-        <meta
-            content="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfede84bbb9c02a8273150_open-graph.jpg"
-            name="twitter:image"
-        />
+        <meta content="https://mdee-website.vercel.app/asset/og-image.jpg" name="twitter:image" />
         <meta content="website" property="og:type" />
         <meta content="summary_large_image" name="twitter:card" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta content="Webflow" name="generator" />
         <link
             crossorigin="anonymous"
             href="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/css/bewellfed-wbs.webflow.shared.e69463cd7.css"
@@ -58,15 +55,10 @@
                         (n.className += t + "touch");
             })(window, document);
         </script>
-        <link
-            href="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6e71b1a11bd0d2c990524_favicon.png"
-            rel="shortcut icon"
-            type="image/x-icon"
-        />
-        <link
-            href="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6e71d0c4d68e450c18586_webclip.png"
-            rel="apple-touch-icon"
-        />
+        <link href="asset/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
+        <link href="asset/favicon-512.png" rel="icon" sizes="512x512" type="image/png" />
+        <link href="asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
         <script type="text/javascript">
             window.__WEBFLOW_CURRENCY_SETTINGS = {
                 currencyCode: "USD",
@@ -80,10 +72,720 @@
             };
         </script>
         <style>
-            .w-webflow-badge {
+            /* Color override: dark green -> dark red */
+            :root,
+            html body {
+                --dark-green: #4a1014;
+                --pale-green: #ffffff;
+                --ink-filter: brightness(0) saturate(100%) invert(51%) sepia(58.3%) saturate(3642%)
+                    hue-rotate(325deg) brightness(31.1%) contrast(110.6%);
+            }
+            /* M'deelicious logo sizing */
+            .logo {
+                height: 62px;
+                width: auto;
+                max-width: 100%;
+            }
+            .footer-brand .logo {
+                height: 84px;
+            }
+            @media screen and (max-width: 767px) {
+                .footer-brand .logo { height: 64px; }
+            }
+            /* --- Navbar balance ---------------------------------------------------
+               One filled control only. The hamburger was a second solid dark block
+               next to the CTA, which made the right side read as a heavy slab.
+               On phones the WhatsApp button also comes out of the bar: the floating
+               WhatsApp button is already on every page, so it was duplicated. */
+            .navbar {
+                border-bottom-color: rgba(74, 16, 20, 0.18);
+            }
+            @media screen and (max-width: 991px) {
+                .nav-wa {
+                    display: none;
+                }
+                .logo {
+                    height: 56px;
+                }
+                .nav-button-wrap {
+                    gap: 12px;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    padding-left: 18px;
+                    padding-right: 18px;
+                    font-size: 15px;
+                }
+                .navbar {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+            }
+            @media screen and (max-width: 479px) {
+                .logo {
+                    height: 50px;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    font-size: 14px;
+                }
+            }
+            /* --- Navbar controls: one height, one radius, one visual family ---
+               NB: never set `display` on .w-nav-button outside a mobile media query.
+               Webflow hides it with display:none above the collapse breakpoint, so
+               setting display here makes the hamburger appear on desktop. */
+            .nav-wa,
+            .nav-button-wrap .button-dark.w-button {
+                height: 42px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                border-radius: 8px;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .nav-wa {
+                gap: 9px;
+                padding: 0 15px;
+                border: 1px solid rgba(74, 16, 20, 0.3);
+                font-size: 15px;
+            }
+            .nav-wa:hover {
+                background-color: var(--dark-green);
+                border-color: var(--dark-green);
+                color: #fff;
+                opacity: 1;
+            }
+            .nav-button-wrap .button-dark.w-button {
+                padding-left: 20px;
+                padding-right: 20px;
+                border-width: 1px;
+            }
+
+            /* --- Mobile dropdown panel --- */
+            @media screen and (max-width: 991px) {
+                .nav-button.w-nav-button {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-sizing: border-box;
+                    width: 42px;
+                    height: 42px;
+                    padding: 0;
+                    border: 1px solid rgba(74, 16, 20, 0.3);
+                    border-radius: 8px;
+                    background-color: transparent;
+                    color: var(--dark-green);
+                    float: none;
+                }
+                .nav-button.w-nav-button .w-icon-nav-menu {
+                    font-size: 19px;
+                    line-height: 1;
+                }
+                .nav-button.w-nav-button:hover {
+                    background-color: rgba(74, 16, 20, 0.06);
+                }
+                .nav-button.w-nav-button.w--open {
+                    background-color: var(--dark-green);
+                    border-color: var(--dark-green);
+                    color: #fff;
+                }
+                /* Webflow animates .w-nav-overlay's HEIGHT open, often to the full
+                   viewport. Never give it a background: it would sheet over the page
+                   and make everything below look blank. Paint the menu panel only.
+                   Do NOT force height:auto here either: the panel inside is
+                   absolutely positioned, so the overlay collapses to zero and its
+                   overflow:hidden clips the whole menu away. */
+                .w-nav-overlay {
+                    background-color: transparent;
+                    background-image: none;
+                    box-shadow: none;
+                    border: 0;
+                    padding: 0;
+                }
+                /* Webflow slides the panel in with a transform. When that animation
+                   does not settle the menu stays parked above the viewport and the
+                   hamburger looks dead, so pin the open panel in place. */
+                .w-nav-overlay .nav-menu.w-nav-menu,
+                .nav-menu.w-nav-menu[style] {
+                    transform: none !important;
+                    -webkit-transform: none !important;
+                    transition: none !important;
+                }
+                .nav-menu.w-nav-menu {
+                    background-color: #f9f2e6;
+                    border-bottom: 1px solid rgba(74, 16, 20, 0.18);
+                    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+                    padding: 4px 22px 12px;
+                }
+                .nav-menu .nav-link.w-nav-link {
+                    display: block;
+                    width: 100%;
+                    padding: 16px 0;
+                    margin: 0;
+                    border-bottom: 1px solid rgba(74, 16, 20, 0.12);
+                    font-size: 17px;
+                    line-height: 1.2;
+                    color: var(--dark-green);
+                    text-align: left;
+                }
+                .nav-menu .nav-link.w-nav-link:last-child {
+                    border-bottom: 0;
+                }
+                .nav-menu .nav-link.w-nav-link.w--current {
+                    opacity: 0.55;
+                }
+                .nav-wa {
+                    width: 42px;
+                    padding: 0;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    font-size: 14px;
+                }
+            }
+
+            /* --- CTA buttons ---------------------------------------------------
+               Primary actions are filled dark red; the two "View ..." links stay
+               as the lighter outline so there is still a primary/secondary split. */
+            .button.w-button,
+            .button.product-button {
+                background-color: var(--dark-green);
+                border: 1px solid var(--dark-green);
+                color: #fff;
+                transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+                    border-color 0.2s ease-in-out;
+            }
+            .button.w-button:hover,
+            .button.product-button:hover,
+            .product-item:hover .button.product-button {
+                background-color: transparent;
+                color: var(--dark-green);
+                border-color: var(--dark-green);
+            }
+            /* secondary */
+            .section-title .button.w-button,
+            .story-content .button.w-button {
+                background-color: transparent;
+                border-color: rgba(74, 16, 20, 0.3);
+                color: var(--dark-green);
+            }
+            .section-title .button.w-button:hover,
+            .story-content .button.w-button:hover {
+                background-color: var(--dark-green);
+                border-color: var(--dark-green);
+                color: #fff;
+            }
+            /* --- Navbar social icons --- */
+            .nav-social {
+                display: flex;
+                align-items: center;
+                gap: 0.35rem;
+                flex-shrink: 0;
+            }
+            .nav-social-link {
+                width: 2.35rem;
+                height: 2.35rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                border: 1px solid rgba(74, 16, 20, 0.22);
+                border-radius: 9px;
+                background-color: rgba(74, 16, 20, 0.06);
+                color: var(--dark-green);
+                text-decoration: none;
+                transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+            }
+            .nav-social-link svg {
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+                display: block;
+            }
+            .nav-social-link:hover {
+                background-color: rgba(74, 16, 20, 0.12);
+                border-color: rgba(74, 16, 20, 0.38);
+                color: var(--dark-green);
+                transform: translateY(-1px);
+            }
+            /* Desktop header: drop the digits, keep WhatsApp as a third icon tile
+               so it reads as a set with Facebook and TikTok. */
+            .nav-wa span {
+                display: none;
+            }
+            .nav-wa {
+                width: 2.35rem;
+                height: 2.35rem;
+                padding: 0;
+                gap: 0;
+                border: 1px solid rgba(74, 16, 20, 0.22);
+                border-radius: 9px;
+                background-color: rgba(74, 16, 20, 0.06);
+                transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+            }
+            .nav-wa svg {
+                width: 18px;
+                height: 18px;
+            }
+            .nav-wa:hover {
+                background-color: rgba(74, 16, 20, 0.12);
+                border-color: rgba(74, 16, 20, 0.38);
+                color: var(--dark-green);
+                opacity: 1;
+                transform: translateY(-1px);
+            }
+            @media screen and (min-width: 992px) {
+                .nav-button-wrap {
+                    gap: 0.35rem;
+                }
+                .nav-wa {
+                    order: 1;
+                }
+                .nav-social {
+                    order: 2;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    order: 3;
+                    margin-left: 14px;
+                }
+            }
+            /* Mobile navbar: the grid has 4 children (menu, logo, buttons, hamburger),
+               so the hamburger wrapped onto its own row. Flex row instead. */
+            @media screen and (max-width: 991px) {
+                /* Row 1: logo centred over a hairline rule.
+                   Row 2: bare hamburger | "Shop products" as plain type | social tiles. */
+                .navbar {
+                    padding: 14px 0 16px;
+                    border-bottom: 0;
+                }
+                .grid-navbar {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    grid-column-gap: 26px;
+                    grid-row-gap: 16px;
+                    align-items: center;
+                }
+                /* !important: Webflow emits #w-node-... { grid-area: ... } rules for these
+                   children, and an ID selector outranks anything class-based here. */
+                .w-nav-brand {
+                    grid-column: 1 / -1 !important;
+                    grid-row: 1 !important;
+                    grid-area: 1 / 1 / 2 / 3 !important;
+                    justify-self: stretch !important;
+                    align-self: center !important;
+                    text-align: center;
+                    padding-bottom: 14px;
+                    border-bottom: 1px solid rgba(74, 16, 20, 0.22);
+                }
+                .logo {
+                    height: 54px;
+                }
+                /* bare icon, no box */
+                .nav-button.w-nav-button {
+                    grid-area: 2 / 1 / 3 / 2 !important;
+                    justify-self: start !important;
+                    width: auto;
+                    height: auto;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 0;
+                    background-color: transparent;
+                    color: var(--dark-green);
+                }
+                .nav-button.w-nav-button:hover,
+                .nav-button.w-nav-button.w--open {
+                    background-color: transparent;
+                    border: 0;
+                    color: var(--dark-green);
+                    opacity: 0.6;
+                }
+                .nav-button.w-nav-button .w-icon-nav-menu {
+                    font-size: 23px;
+                }
+                /* .grid-navbar prefix: the base .nav-button-wrap rule sits later in
+                   this stylesheet, so an equal-specificity selector would lose to it */
+                .grid-navbar .nav-button-wrap {
+                    grid-area: 2 / 2 / 3 / 3 !important;
+                    justify-self: stretch !important;
+                    width: 100%;
+                    justify-content: flex-start;
+                    gap: 10px;
+                }
+                /* the CTA becomes plain type, as in the reference */
+                .nav-button-wrap .button-dark.w-button {
+                    height: auto;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 0;
+                    background-color: transparent;
+                    color: var(--dark-green);
+                    font-family: "Nuosu SIL", Georgia, serif;
+                    font-size: clamp(15px, 4vw, 18px);
+                    line-height: 1.1;
+                    letter-spacing: 0.01em;
+                    white-space: nowrap;
+                }
+                .nav-button-wrap .button-dark.w-button:hover {
+                    background-color: transparent;
+                    color: var(--dark-green);
+                    opacity: 0.6;
+                }
+                .nav-social {
+                    margin-left: auto;
+                }
+                .nav-menu {
+                    grid-area: 3 / 1 / 4 / 3 !important;
+                }
+            }
+            @media screen and (max-width: 479px) {
+                .nav-button-wrap {
+                    gap: 8px;
+                }
+            }
+            /* Navbar right-hand side (base) */
+            .nav-button-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 18px;
+            }
+            .nav-wa {
+                color: var(--dark-green);
+                text-decoration: none;
+                white-space: nowrap;
+                transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+            }
+            .nav-wa svg {
+                width: 19px;
+                height: 19px;
+                flex: none;
+            }
+            .button-dark.w-button {
+                white-space: nowrap;
+            }
+            /* The cart can't check out — products are sold on Shopee and TikTok Shop */
+            .w-commerce-commercecartwrapper {
+                display: none !important;
+            }
+            /* phones: WhatsApp leaves the bar (the floating button covers it) */
+            @media screen and (max-width: 991px) {
+                .nav-wa {
+                    display: none;
+                }
+            }
+            /* Icon boxes: every icon renders in the same fixed square, whatever its file */
+            .marquee-item img,
+            .hero-icon {
+                width: 64px;
+                height: 64px;
+                object-fit: contain;
+                flex: none;
+            }
+            @media screen and (max-width: 991px) {
+                .marquee-item img,
+                .hero-icon {
+                    width: 52px;
+                    height: 52px;
+                }
+            }
+            @media screen and (max-width: 479px) {
+                .marquee-item img,
+                .hero-icon {
+                    width: 44px;
+                    height: 44px;
+                }
+            }
+            /* Recolour the template's green line-art SVGs to the brand palette.
+               --ink-filter turns any icon into #4a1014; brightness(0) invert(1) turns it white. */
+            .hero-icon,
+            .footer-social-icon,
+            .story-social-icon,
+            .tab-link-image {
+                filter: var(--ink-filter);
+            }
+            .marquee-item img {
+                filter: brightness(0) invert(1);
+                opacity: 0.92;
+            }
+            .decoration img,
+            .shape-1,
+            .shape-5,
+            .shape-6,
+            .shape-7,
+            .shape-9,
+            .shape-10,
+            .shape-11 {
+                filter: var(--ink-filter);
+                opacity: 0.22;
+            }
+            .shape-12 {
+                filter: brightness(0) invert(1);
+                opacity: 0.18;
+            }
+            /* Softer card outlines */
+            .product-item,
+            .product-image-wrap,
+            .product-meal,
+            .menu-item,
+            .menu-image-wrap,
+            .recipe-item,
+            .recipe-image-wrap,
+            .team-item,
+            .step-imaga-wrap {
+                border-color: rgba(74, 16, 20, 0.18);
+            }
+            .buy-tiktok {
+                border-color: rgba(74, 16, 20, 0.4);
+            }
+            /* Floating WhatsApp button (bottom left) */
+            .wa-float {
+                position: fixed;
+                left: 24px;
+                bottom: 24px;
+                z-index: 9990;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 12px 18px 12px 14px;
+                border-radius: 100px;
+                background: var(--dark-green);
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                text-decoration: none;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+                transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+            .wa-float:hover {
+                color: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+            }
+            .wa-float svg {
+                width: 22px;
+                height: 22px;
+                flex: none;
+                display: block;
+            }
+            .wa-float:hover {
+                background: #5f161b;
+            }
+            @media screen and (max-width: 767px) {
+                .wa-float {
+                    left: 16px;
+                    bottom: 16px;
+                    padding: 14px;
+                }
+                .wa-float .wa-label {
+                    display: none;
+                }
+            }
+            .w-webflow-badge,
+            a.w-webflow-badge,
+            div.w-webflow-badge,
+            [class*="w-webflow-badge"] {
                 position: fixed !important;
-                display: None !important;
+                display: none !important;
                 visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+            }
+            /* Contact page */
+            .contact-eyebrow {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: rgba(74, 16, 20, 0.62);
+            }
+            .contact-eyebrow::before {
+                content: "";
+                width: 28px;
+                height: 1px;
+                flex: none;
+                background-color: rgba(74, 16, 20, 0.45);
+            }
+            .contact-lead {
+                max-width: 620px;
+                margin-bottom: 32px;
+                color: rgba(74, 16, 20, 0.78);
+            }
+            .contact-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .contact-actions .button.w-button {
+                margin: 0;
+            }
+            .contact-button-ghost.w-button {
+                background-color: transparent;
+                border: 1px solid rgba(74, 16, 20, 0.35);
+                color: var(--dark-green);
+            }
+            .contact-button-ghost.w-button:hover {
+                background-color: var(--dark-green);
+                border-color: var(--dark-green);
+                color: #fff;
+            }
+            .grid-contact {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 24px;
+                grid-row-gap: 24px;
+            }
+            .contact-card {
+                display: flex;
+                flex-direction: column;
+                padding: 30px 28px;
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                border-radius: 10px;
+                color: var(--dark-green);
+                text-decoration: none;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+            }
+            a.contact-card:hover {
+                border-color: rgba(74, 16, 20, 0.4);
+                box-shadow: 0 12px 30px rgba(74, 16, 20, 0.1);
+                transform: translateY(-2px);
+            }
+            .contact-card-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 46px;
+                height: 46px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                background-color: rgba(74, 16, 20, 0.07);
+            }
+            .contact-card-icon svg {
+                width: 22px;
+                height: 22px;
+                display: block;
+            }
+            .contact-card-title {
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: rgba(74, 16, 20, 0.6);
+            }
+            .contact-card-value {
+                margin-top: 6px;
+                font-family: "Nuosu SIL", Georgia, serif;
+                font-size: 24px;
+                line-height: 1.3;
+            }
+            .contact-card-note {
+                margin-top: 12px;
+                font-size: 15px;
+                line-height: 1.5;
+                color: rgba(74, 16, 20, 0.7);
+            }
+            .contact-card-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 18px;
+            }
+            .contact-card-links a {
+                padding: 8px 14px;
+                border: 1px solid rgba(74, 16, 20, 0.3);
+                border-radius: 100px;
+                font-size: 14px;
+                line-height: 1;
+                color: var(--dark-green);
+                text-decoration: none;
+                transition: background-color 0.2s ease, color 0.2s ease;
+            }
+            .contact-card-links a:hover {
+                background-color: var(--dark-green);
+                color: #fff;
+            }
+            .contact-map {
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                border-radius: 10px;
+                overflow: hidden;
+                line-height: 0;
+            }
+            .contact-map iframe {
+                width: 100%;
+                height: 380px;
+                border: 0;
+                display: block;
+            }
+            .contact-cta {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 36px;
+                padding: 46px 48px;
+                border-radius: 10px;
+                background-color: var(--dark-green);
+                background-image: url("asset/icons/spice-tile-dark.png");
+                background-repeat: repeat;
+                background-size: 560px 560px;
+                color: #fff;
+            }
+            .contact-cta h3 {
+                margin-bottom: 12px;
+                color: #fff;
+            }
+            .contact-cta p {
+                max-width: 620px;
+                margin: 0;
+                color: rgba(255, 255, 255, 0.82);
+            }
+            .contact-cta-button.w-button {
+                flex: none;
+                background-color: #fff;
+                border: 1px solid #fff;
+                color: var(--dark-green);
+            }
+            .contact-cta-button.w-button:hover {
+                background-color: transparent;
+                color: #fff;
+            }
+            @media screen and (max-width: 991px) {
+                .grid-contact {
+                    grid-template-columns: 1fr;
+                }
+                .contact-cta {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 38px 30px;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .contact-hero {
+                    padding-top: 40px;
+                }
+                .contact-actions .button.w-button {
+                    flex: 1 1 100%;
+                    text-align: center;
+                }
+                .contact-map iframe {
+                    height: 300px;
+                }
+                .contact-cta-button.w-button {
+                    width: 100%;
+                    text-align: center;
+                }
             }
         </style>
     </head>
@@ -100,40 +802,46 @@
             <div class="container w-container">
                 <div class="w-layout-grid grid-navbar">
                     <nav class="nav-menu w-nav-menu" role="navigation">
-                        <a class="nav-link w-nav-link" href="/our-menu">Our Menu</a
-                        ><a class="nav-link w-nav-link" href="/our-story">Our story</a
-                        ><a class="nav-link w-nav-link" href="/how-it-works">How It Works</a>
-                        <div class="nav-link w-dropdown" data-delay="0" data-hover="true">
-                            <div class="dropdown-toggle w-dropdown-toggle">
-                                <div class="dropdown-icon w-icon-dropdown-toggle"></div>
-                                <div>Pages</div>
-                            </div>
-                            <nav class="dropdown-list w-dropdown-list">
-                                <a class="dropdown-link w-dropdown-link" href="/">Home</a
-                                ><a class="dropdown-link w-dropdown-link" href="/home-shop">Home Shop</a
-                                ><a class="dropdown-link w-dropdown-link" href="/our-menu">Our Menu (CMS)</a
-                                ><a class="dropdown-link w-dropdown-link" href="/shop">Shop (Ecom)</a
-                                ><a class="dropdown-link w-dropdown-link" href="/recipe">Recipes</a
-                                ><a class="dropdown-link w-dropdown-link" href="/our-story">Our Story</a
-                                ><a class="dropdown-link w-dropdown-link" href="/how-it-works">How It Works</a
-                                ><a class="dropdown-link w-dropdown-link" href="/our-chef">Our Chef</a
-                                ><a class="dropdown-link w-dropdown-link" href="/location">Locations</a
-                                ><a aria-current="page" class="dropdown-link w-dropdown-link w--current" href="/contact"
-                                    >Contact</a
-                                >
-                            </nav>
-                        </div>
+                        <a class="nav-link w-nav-link" href="/home-shop.html">Products</a
+                        ><a class="nav-link w-nav-link" href="/recipes.html">Recipes</a
+                        ><a class="nav-link w-nav-link" href="/our-story.html">Our story</a
+                        ><a aria-current="page" class="nav-link w-nav-link w--current" href="/contact.html">Contact</a>
                     </nav>
                     <a class="w-nav-brand" href="/" id="w-node-_7e1b0c2e-5e38-0a09-6d7a-0a8659b16665-59b16659"
                         ><img
                             alt=""
                             class="logo"
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfeeaf622dd076e2779deb_bewellfed.svg"
+                            src="asset/logo-web.png"
                     /></a>
                     <div class="nav-button-wrap" id="w-node-_7e1b0c2e-5e38-0a09-6d7a-0a8659b16667-59b16659">
-                        <p class="nav-address">119 Tanglewood Lane<br />Gulfport, MS 39503</p>
-                        <a class="button-dark w-button" href="/our-menu">Our menu</a>
+                        <a
+                            aria-label="WhatsApp M’Dee on 016-4432630"
+                            class="nav-wa"
+                            href="https://wa.me/60164432630"
+                            rel="noopener"
+                            target="_blank"
+                            ><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"
+                                />
+                                <path
+                                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23a8.23 8.23 0 0 1 8.23 8.24c0 4.54-3.69 8.22-8.23 8.22z"
+                                />
+                            </svg>
+                            <span>016-4432630</span></a
+                        >
+                        <a class="button-dark w-button" href="/home-shop.html">Shop products</a>
+                        <div class="nav-social">
+                            <a
+                                aria-label="M’Dee on TikTok"
+                                class="nav-social-link"
+                                href="https://www.tiktok.com/@mdeelicious"
+                                rel="noopener"
+                                target="_blank"
+                                ><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg></a
+                            >
+                        </div>
                         <div
                             class="w-commerce-commercecartwrapper"
                             data-node-type="commerce-cart-wrapper"
@@ -531,7 +1239,7 @@
                                                         class="w-commerce-commercecartcheckoutbutton button"
                                                         data-loading-text="Hang Tight..."
                                                         data-node-type="cart-checkout-button"
-                                                        href="/checkout"
+                                                        href="/home-shop.html"
                                                         value="Continue to Checkout"
                                                         >Continue to Checkout</a
                                                     >
@@ -567,125 +1275,96 @@
                 </div>
             </div>
         </div>
-        <div class="hero-inner text-center">
-            <div class="container w-container"><h1>Contact us</h1></div>
-        </div>
-        <div class="contact-section section-spacing-bottom">
+        <div class="contact-hero section-spacing">
             <div class="container w-container">
-                <div class="w-layout-grid grid-contact">
-                    <div class="contact-info" id="w-node-_5d47d17c-9ad1-4123-474d-fbf81eb94f8f-1fe58da0">
-                        <div class="contact-item">
-                            <div>
-                                If you have any questions about our services, meal plans, meal packs, delivery or
-                                pick-up schedules, and delivery areas, contact us
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <h6>Email</h6>
-                            <div>hello@example.com</div>
-                        </div>
-                        <div class="contact-item">
-                            <h6>Phone</h6>
-                            <div>+79 2589 63598</div>
-                        </div>
-                        <div class="contact-item">
-                            <h6>Address</h6>
-                            <div>Chicago HQ Estica Cop. <br />Macomb, MI 48042</div>
-                        </div>
-                        <div class="contact-item">
-                            <a class="button-dark w-button" href="/location">View All Locations</a>
-                        </div>
-                    </div>
-                    <div id="w-node-_4222552c-33e6-27aa-d823-c37a9c7ffbb8-1fe58da0">
-                        <div class="contact-form-wrap w-form">
-                            <form
-                                data-name="Contact Form"
-                                data-wf-element-id="d4a28bf5-fa15-7ca5-1ce2-ffa5b36a51e4"
-                                data-wf-page-id="62b1b5c13e38dbd81fe58da0"
-                                id="wf-form-Contact-Form"
-                                method="get"
-                                name="wf-form-Contact-Form"
-                            >
-                                <div class="input-group">
-                                    <label for="Name">Name</label
-                                    ><input
-                                        class="form-input w-input"
-                                        data-name="Name"
-                                        id="Name"
-                                        maxlength="256"
-                                        name="Name"
-                                        placeholder=""
-                                        type="text"
-                                    />
-                                </div>
-                                <div class="input-group">
-                                    <label for="Email">Email</label
-                                    ><input
-                                        class="form-input w-input"
-                                        data-name="Email"
-                                        id="Email"
-                                        maxlength="256"
-                                        name="Email"
-                                        placeholder=""
-                                        required=""
-                                        type="email"
-                                    />
-                                </div>
-                                <div class="input-group">
-                                    <label for="Phone">Phone</label
-                                    ><input
-                                        class="form-input w-input"
-                                        data-name="Phone"
-                                        id="Phone"
-                                        maxlength="256"
-                                        name="Phone"
-                                        placeholder=""
-                                        type="tel"
-                                    />
-                                </div>
-                                <div class="input-group">
-                                    <label for="Message">Message</label
-                                    ><textarea
-                                        class="form-input form-textarea w-input"
-                                        data-name="Message"
-                                        id="Message"
-                                        maxlength="5000"
-                                        name="Message"
-                                        placeholder=""
-                                    ></textarea>
-                                </div>
-                                <input
-                                    class="button w-button"
-                                    data-wait="Please wait..."
-                                    type="submit"
-                                    value="Submit"
-                                />
-                            </form>
-                            <div class="success-message w-form-done">
-                                <div>Thank you! Your submission has been received!</div>
-                            </div>
-                            <div class="error-message w-form-fail">
-                                <div>Oops! Something went wrong while submitting the form.</div>
-                            </div>
-                        </div>
+                <div class="contact-eyebrow">Contact</div>
+                <div class="section-title">
+                    <h1 class="inner-hero-tile">We are a message away<br /></h1>
+                </div>
+                <p class="contact-lead">
+                    Questions about a product, an order that has gone quiet, bulk sauce for your stall or restaurant,
+                    or becoming a stockist. WhatsApp is the fastest way to reach us, and we answer during working
+                    hours from the kitchen in Tasek Gelugor.
+                </p>
+                <div class="contact-actions">
+                    <a class="button w-button" href="https://wa.me/60164432630" rel="noopener" target="_blank">WhatsApp us</a>
+                    <a class="button contact-button-ghost w-button" href="tel:+60164432630">Call 016-4432630</a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-cards-section section-spacing-bottom">
+            <div class="container w-container">
+                <div class="grid-contact">
+                    <a class="contact-card" href="https://wa.me/60164432630" rel="noopener" target="_blank">
+                        <span class="contact-card-icon"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23a8.23 8.23 0 0 1 8.23 8.24c0 4.54-3.69 8.22-8.23 8.22z"/></svg></span>
+                        <span class="contact-card-title">WhatsApp</span>
+                        <span class="contact-card-value">016-4432630</span>
+                        <span class="contact-card-note">Fastest reply. Orders, stock and stockist enquiries.</span>
+                    </a>
+                    <a class="contact-card" href="tel:+60164432630">
+                        <span class="contact-card-icon"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></span>
+                        <span class="contact-card-title">Call us</span>
+                        <span class="contact-card-value">016-4432630</span>
+                        <span class="contact-card-note">Monday to Saturday, working hours.</span>
+                    </a>
+                    <a
+                        class="contact-card"
+                        href="https://www.google.com/maps/search/?api=1&amp;query=No.+28,+Blok+C,+Kompleks+Perda+Food+Park,+Taman+Industri+Asas+Tani,+Kubang+Menerong,+13300+Tasek+Gelugor,+Pulau+Pinang"
+                        rel="noopener"
+                        target="_blank"
+                    >
+                        <span class="contact-card-icon"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+                        <span class="contact-card-title">The kitchen</span>
+                        <span class="contact-card-value">MDEE Enterprise</span>
+                        <span class="contact-card-note">
+                            No. 28, Blok C, Kompleks Perda Food Park,<br />Taman Industri Asas Tani, Kubang
+                            Menerong,<br />13300 Tasek Gelugor, Pulau Pinang
+                        </span>
+                    </a>
+                    <div class="contact-card contact-card-static">
+                        <span class="contact-card-icon"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16l1 5a3 3 0 0 1-3 3 3 3 0 0 1-2.5-1.35A3 3 0 0 1 13 12a3 3 0 0 1-2.5-1.35A3 3 0 0 1 8 12a3 3 0 0 1-2.5-1.35A3 3 0 0 1 3 12a3 3 0 0 1-0-.02L4 4zm1 9.9c.33.07.66.1 1 .1a4.9 4.9 0 0 0 2.5-.68A4.9 4.9 0 0 0 11 14a4.9 4.9 0 0 0 2.5-.68A4.9 4.9 0 0 0 16 14c.34 0 .67-.03 1-.1V20H5v-6.1zM9 15v4h6v-4H9z"/></svg></span>
+                        <span class="contact-card-title">Where to buy</span>
+                        <span class="contact-card-value">Online and in store</span>
+                        <span class="contact-card-note">
+                            Shopee, Lazada and TikTok Shop, and on the shelves at Mydin, Sunshine and Agrobazaar.
+                        </span>
+                        <span class="contact-card-links">
+                            <a href="/home-shop.html">See the range</a
+                            ><a href="https://www.tiktok.com/@mdeelicious" rel="noopener" target="_blank">TikTok</a
+                            ><a href="https://www.facebook.com/mdeelicious.my/" rel="noopener" target="_blank">Facebook</a>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="map-section">
-            <div class="google-map">
-                <div
-                    aria-label="beWellfed Store"
-                    class="w-widget w-widget-map"
-                    data-enable-scroll="false"
-                    data-enable-touch="true"
-                    data-widget-latlng="37.3860517,-122.0838511"
-                    data-widget-style="roadmap"
-                    data-widget-tooltip=""
-                    data-widget-zoom="15"
-                    role="region"
-                    title="beWellfed Store"
-                ></div>
+        <div class="contact-map-section section-spacing-bottom">
+            <div class="container w-container">
+                <div class="contact-map">
+                    <iframe
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=No.+28,+Blok+C,+Kompleks+Perda+Food+Park,+Taman+Industri+Asas+Tani,+Kubang+Menerong,+13300+Tasek+Gelugor,+Pulau+Pinang&amp;output=embed"
+                        title="M’Dee kitchen, Kompleks Perda Food Park, Tasek Gelugor"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="contact-cta-section section-spacing-bottom">
+            <div class="container w-container">
+                <div class="contact-cta">
+                    <div class="contact-cta-text">
+                        <h3>Stalls, restaurants and stockists</h3>
+                        <p>
+                            We supply 1kg pouches and 1.5kg bottles for kitchens that go through sauce by the week,
+                            and we work with shops that want to carry the range. Send us a message and tell us what
+                            you need.
+                        </p>
+                    </div>
+                    <a class="button contact-cta-button w-button" href="https://wa.me/60164432630" rel="noopener" target="_blank"
+                        >Talk to us on WhatsApp</a
+                    >
+                </div>
             </div>
         </div>
         <section class="footer section-spacing-top">
@@ -698,101 +1377,43 @@
                                     alt=""
                                     class="logo"
                                     loading="lazy"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfeeaf622dd076e2779deb_bewellfed.svg"
+                                    src="asset/logo-web.png"
                             /></a>
                             <div class="footer-app">
-                                <p class="footer-app-title">Download the beWellfed app today.</p>
-                                <div class="footer-app-wrap">
-                                    <a class="w-inline-block" href="#"
-                                        ><img
-                                            alt=""
-                                            class="app-logo"
-                                            loading="lazy"
-                                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b18f0e084a2ad916a2f207_app-store.svg" /></a
-                                    ><a class="w-inline-block" href="#"
-                                        ><img
-                                            alt=""
-                                            class="app-logo"
-                                            loading="lazy"
-                                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b18ee79d9385eea155d0c0_play-store.svg"
-                                    /></a>
-                                </div>
+                                <p class="footer-app-title">Find us on Shopee, Lazada, TikTok Shop and at Mydin, Sunshine and Agrobazaar.</p>
                             </div>
                         </div>
                         <div class="footer-links">
                             <div class="footer-links-block" id="w-node-ed138bd9-6e00-f035-78ea-10fd8591a269-8591a259">
                                 <a class="footer-link" href="/">Home</a
-                                ><a class="footer-link" href="/home-shop">Home Shop</a
-                                ><a class="footer-link" href="/our-menu">Our Menu (CMS)</a
-                                ><a class="footer-link" href="/shop">Shop (Ecom)</a
-                                ><a class="footer-link" href="/recipe">Recipes</a>
+                                ><a class="footer-link" href="/home-shop.html">Home Shop</a
+                                ><a class="footer-link" href="/home-shop.html">Products (CMS)</a
+                                ><a class="footer-link" href="/home-shop.html">Shop (Ecom)</a
+                                ><a class="footer-link" href="/recipes.html">Recipes</a>
                             </div>
                             <div class="footer-links-block" id="w-node-ed138bd9-6e00-f035-78ea-10fd8591a272-8591a259">
-                                <a class="footer-link" href="/our-story">Our Story</a
-                                ><a class="footer-link" href="/how-it-works">How It Works</a
-                                ><a class="footer-link" href="/our-chef">Our Chef</a
-                                ><a class="footer-link" href="/location">Locations</a
-                                ><a aria-current="page" class="footer-link w--current" href="/contact">Contact</a>
-                            </div>
-                            <div class="footer-links-block" id="w-node-_3627c1cd-8c63-c1ce-1307-d03c70917eff-8591a259">
-                                <a class="footer-link" href="/utility-pages/style-guide">Style Guide</a
-                                ><a class="footer-link" href="/utility-pages/instructions">Instructions</a
-                                ><a class="footer-link" href="/utility-pages/licenses">Licenses</a
-                                ><a class="footer-link" href="/utility-pages/changelog">Changelog</a>
+                                <a class="footer-link" href="/our-story.html">Our Story</a
+                                                                ><a class="footer-link" href="/how-it-works.html">How To Cook</a
+                                ><a class="footer-link" href="/our-story.html">Our Founder</a
+                                ><a class="footer-link" href="/home-shop.html">Where To Buy</a
+                                ><a aria-current="page" class="footer-link w--current" href="/contact.html">Contact</a>
                             </div>
                         </div>
                     </div>
                     <div class="footer-contact" id="w-node-ed138bd9-6e00-f035-78ea-10fd8591a27b-8591a259">
-                        <div>Call for order:</div>
-                        <h4>+1 2586 5892</h4>
-                        <p>hello@example.com</p>
-                        <p class="footer-address">119 Tanglewood Lane<br />Gulfport, MS 39503</p>
+                        <!-- TO VERIFY: phone and address below are from a 2017 listing for MDEE Enterprise -->
+                        <div>Call or WhatsApp:</div>
+                        <h4>016-4432630</h4>
+                        <p>MDEE Enterprise</p>
+                        <p class="footer-address">
+                            No. 28, Blok C, Kompleks Perda Food Park,<br />Taman Industri Asas Tani, Kubang
+                            Menerong,<br />13300 Tasek Gelugor, Pulau Pinang
+                        </p>
                     </div>
                 </div>
                 <div class="w-layout-grid grid-footer-copyright">
                     <div class="footer-copyright-center">
-                        Designed by <a href="https://www.webestica.com" target="_blank">Webestica,</a> Powered by
-                        <a href="https://webflow.com" target="_blank">Webflow</a>
-                    </div>
-                    <div class="footer-social-icons">
-                        <a class="footer-social-icon-link w-inline-block" href="https://facebook.com/" target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b15a927c561db22a30f531_facebook.svg"
-                                width="18" /></a
-                        ><a
-                            class="footer-social-icon-link w-inline-block"
-                            href="https://www.instagram.com/"
-                            target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b15a9dff9b939f655ce9cd_instagram-dark.svg" /></a
-                        ><a class="footer-social-icon-link w-inline-block" href="https://pinterest.com/" target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b193604301b966d8e23a05_pinterest.svg" /></a
-                        ><a
-                            class="footer-social-icon-link w-inline-block"
-                            href="https://www.linkedin.com/"
-                            target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b1934c7ec46d60347d4e38_linkedin.svg" /></a
-                        ><a class="footer-social-icon-link w-inline-block" href="https://twitter.com/"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b15aa6579cfcbe089a8cd0_twitter-dark.svg"
-                        /></a>
+                        &copy; 2026 MDEE Enterprise. All rights reserved.
                     </div>
                 </div>
             </div>
@@ -801,7 +1422,7 @@
                     alt=""
                     class="shape-6"
                     loading="lazy"
-                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b195f3d08db6cdb97ac5e1_shape-07.svg"
+                    src="asset/icons/pandan.png"
                 />
             </div>
             <div class="decoration shape-7">
@@ -809,10 +1430,23 @@
                     alt=""
                     class="shape-7"
                     loading="lazy"
-                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b19709084a2a4746a326da_29%20(2).svg"
+                    src="asset/icons/chilli.png"
                 />
             </div>
         </section>
+        <!-- TO VERIFY: WhatsApp number 016-4432630 (wa.me/60164432630) -->
+        <a
+            aria-label="Chat with M’Dee on WhatsApp"
+            class="wa-float"
+            href="https://wa.me/60164432630"
+            rel="noopener"
+            target="_blank"
+        >
+            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 110.9L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+            <span class="wa-label">WhatsApp us</span>
+        </a>
         <script
             crossorigin="anonymous"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -833,20 +1467,8 @@
         ></script>
         <script
             crossorigin="anonymous"
-            integrity="sha384-0FXTaqC012zhUnTJiTXs/wyfxEvY+jx7+DxKOnGMNVhfo9tGbtQ02ZrdtnpJabuV"
-            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/js/webflow.schunk.7dcf34fc5b25237b.js"
-            type="text/javascript"
-        ></script>
-        <script
-            crossorigin="anonymous"
-            integrity="sha384-XLZ07W8YDlSzpW4d1F8yfqpR1oXe13FvBtbfXBwWsRwwvEMvAis6Hj/R4MQ+H8Vi"
-            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/js/webflow.schunk.4c1a5dbbb1f4c850.js"
-            type="text/javascript"
-        ></script>
-        <script
-            crossorigin="anonymous"
-            integrity="sha384-rXdWKor8UiKm8GVxWH3oXY3pRcfY9ybbI87rvCQnxx1F84SWMdtwGhUrO27OqJWy"
-            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/js/webflow.b1cd7298.af984117509ea456.js"
+            integrity="sha384-TS4TakbC2fZFn6Fcs6ELtoZJzDa+NzBU5kgMgejx+bEpwVPDbayUQGf7VkeO375x"
+            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/js/webflow.9b865450.fc57d0f0c4d6805a.js"
             type="text/javascript"
         ></script>
     </body>

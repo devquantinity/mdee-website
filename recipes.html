@@ -8,17 +8,17 @@
     <head>
         <meta charset="utf-8" />
         <link crossorigin="anonymous" href="https://cdn.prod.website-files.com" rel="preconnect" />
-        <title>Our Story — M’Dee, Penang Since 2006</title>
+        <title>Recipes — What To Cook With M’Dee</title>
         <meta
-            content="How a lecturer in Bukit Mertajam turned a home-made char koay teow paste into M'Dee, a halal-certified Penang sauce maker shipping thousands of bottles a month."
+            content="What to cook with M’Dee. Start with Penang char koay teow, ready in about ten minutes with our paste or sauce."
             name="description"
         />
         <meta content="M’Dee — Rahsia rasa ori Penang" property="og:title" />
         <meta
-            content="How a lecturer in Bukit Mertajam turned a home-made char koay teow paste into M'Dee, a halal-certified Penang sauce maker shipping thousands of bottles a month."
+            content="What to cook with M’Dee. Start with Penang char koay teow, ready in about ten minutes with our paste or sauce."
             property="og:description"
         />
-        <meta content="https://mdee-website.vercel.app/our-story.html" property="og:url" />
+        <meta content="https://mdee-website.vercel.app/recipes.html" property="og:url" />
         <meta content="M’Dee" property="og:site_name" />
         <meta content="https://mdee-website.vercel.app/asset/og-image.jpg" property="og:image" />
         <meta content="1200" property="og:image:width" />
@@ -26,7 +26,7 @@
         <meta content="M’Dee — Penang char koay teow sauce, pastes and sambal" property="og:image:alt" />
         <meta content="M’Dee — Rahsia rasa ori Penang" name="twitter:title" />
         <meta
-            content="How a lecturer in Bukit Mertajam turned a home-made char koay teow paste into M'Dee, a halal-certified Penang sauce maker shipping thousands of bottles a month."
+            content="What to cook with M’Dee. Start with Penang char koay teow, ready in about ten minutes with our paste or sauce."
             name="twitter:description"
         />
         <meta content="https://mdee-website.vercel.app/asset/og-image.jpg" name="twitter:image" />
@@ -600,6 +600,407 @@
                 height: 0 !important;
                 overflow: hidden !important;
             }
+            /* Shared page furniture for the recipe pages */
+            .page-eyebrow {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: rgba(74, 16, 20, 0.62);
+            }
+            .page-eyebrow::before {
+                content: "";
+                width: 28px;
+                height: 1px;
+                flex: none;
+                background-color: rgba(74, 16, 20, 0.45);
+            }
+            .page-lead {
+                max-width: 560px;
+                margin-bottom: 28px;
+                color: rgba(74, 16, 20, 0.78);
+            }
+            .page-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .page-actions .button.w-button {
+                margin: 0;
+            }
+            .page-button-ghost.w-button {
+                background-color: transparent;
+                border: 1px solid rgba(74, 16, 20, 0.35);
+                color: var(--dark-green);
+            }
+            .page-button-ghost.w-button:hover {
+                background-color: var(--dark-green);
+                border-color: var(--dark-green);
+                color: #fff;
+            }
+            /* How to cook */
+            .grid-cook-hero {
+                display: grid;
+                grid-template-columns: 1fr 0.9fr;
+                grid-column-gap: 56px;
+                grid-row-gap: 36px;
+                align-items: center;
+            }
+            .cook-hero-image img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 18px 44px rgba(74, 16, 20, 0.16);
+            }
+            .cook-facts {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-bottom: 30px;
+            }
+            .cook-fact {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 9px 16px 9px 12px;
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                border-radius: 100px;
+                font-size: 14px;
+                line-height: 1;
+            }
+            .cook-fact-icon {
+                width: 22px;
+                height: 22px;
+                flex: none;
+                object-fit: contain;
+            }
+            .grid-cook-need {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 24px;
+                grid-row-gap: 24px;
+            }
+            .need-card {
+                padding: 32px 30px;
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                border-radius: 10px;
+                background-color: var(--old-lace, #f9f2e6);
+            }
+            .need-icon {
+                width: 44px;
+                height: 44px;
+                object-fit: contain;
+                margin-bottom: 16px;
+            }
+            .need-title {
+                margin-bottom: 14px;
+            }
+            .need-list {
+                margin: 0;
+                padding-left: 18px;
+                color: rgba(74, 16, 20, 0.78);
+            }
+            .need-list li {
+                margin-bottom: 8px;
+                line-height: 1.5;
+            }
+            .need-list-two {
+                column-count: 2;
+                column-gap: 24px;
+            }
+            .need-link {
+                display: inline-block;
+                margin-top: 16px;
+                color: var(--dark-green);
+                border-bottom: 1px solid rgba(74, 16, 20, 0.4);
+                text-decoration: none;
+                font-size: 15px;
+            }
+            .grid-cook-method {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 50px;
+                grid-row-gap: 30px;
+                align-items: center;
+            }
+            .grid-cook-method.reverse .cook-method-image {
+                order: 2;
+            }
+            .cook-method-image img {
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid rgba(74, 16, 20, 0.14);
+            }
+            .cook-steps {
+                list-style: none;
+                margin: 0 0 24px;
+                padding: 0;
+            }
+            .cook-step {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(74, 16, 20, 0.12);
+            }
+            .cook-step:last-child {
+                border-bottom: 0;
+            }
+            .cook-step-no {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                flex: none;
+                border-radius: 50%;
+                background-color: #efa83a;
+                border: 1px solid var(--dark-green);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                color: var(--dark-green);
+            }
+            .cook-step-text {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+            .cook-done {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 16px 18px;
+                border-radius: 10px;
+                background-color: rgba(239, 168, 58, 0.16);
+                font-size: 15px;
+                line-height: 1.45;
+            }
+            .cook-done-icon {
+                width: 28px;
+                height: 28px;
+                flex: none;
+                object-fit: contain;
+            }
+            .cook-tips {
+                padding: 48px 46px;
+                border-radius: 10px;
+                background-color: var(--dark-green);
+                background-image: url("asset/icons/spice-tile-dark.png");
+                background-repeat: repeat;
+                background-size: 560px 560px;
+                color: #fff;
+            }
+            .cook-tips h3 {
+                margin-bottom: 30px;
+                color: #fff;
+            }
+            .grid-cook-tips {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 32px;
+                grid-row-gap: 28px;
+            }
+            .cook-tip-icon {
+                width: 42px;
+                height: 42px;
+                object-fit: contain;
+                margin-bottom: 14px;
+            }
+            .cook-tip h6 {
+                margin-bottom: 8px;
+                color: #fff;
+            }
+            .cook-tip p {
+                margin: 0;
+                font-size: 15px;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 0.78);
+            }
+            .cook-cta {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 32px;
+                padding: 38px 42px;
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                border-radius: 10px;
+            }
+            .cook-cta h3 {
+                margin-bottom: 8px;
+            }
+            .cook-cta p {
+                margin: 0;
+                color: rgba(74, 16, 20, 0.75);
+            }
+            .cook-cta .button.w-button {
+                flex: none;
+                margin: 0;
+            }
+            @media screen and (max-width: 991px) {
+                .grid-cook-hero,
+                .grid-cook-need,
+                .grid-cook-method {
+                    grid-template-columns: 1fr;
+                }
+                .grid-cook-method.reverse .cook-method-image {
+                    order: 0;
+                }
+                .grid-cook-tips {
+                    grid-template-columns: 1fr;
+                }
+                .cook-tips {
+                    padding: 36px 28px;
+                }
+                .cook-cta {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 30px 26px;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .cook-hero {
+                    padding-top: 40px;
+                }
+                .need-list-two {
+                    column-count: 1;
+                }
+                .page-actions .button.w-button,
+                .cook-cta .button.w-button {
+                    flex: 1 1 100%;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            /* Recipes index */
+            .recipe-feature {
+                display: grid;
+                grid-template-columns: 1fr 1.05fr;
+                grid-column-gap: 46px;
+                grid-row-gap: 28px;
+                align-items: center;
+                padding: 34px;
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                border-radius: 10px;
+                color: var(--dark-green);
+                text-decoration: none;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+            }
+            .recipe-feature:hover {
+                border-color: rgba(74, 16, 20, 0.4);
+                box-shadow: 0 16px 38px rgba(74, 16, 20, 0.12);
+                transform: translateY(-2px);
+            }
+            .recipe-feature-image img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 8px;
+                display: block;
+            }
+            .recipe-tag {
+                display: inline-block;
+                margin-bottom: 14px;
+                padding: 7px 14px;
+                border-radius: 100px;
+                background-color: rgba(239, 168, 58, 0.22);
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                font-size: 12px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                line-height: 1;
+            }
+            .recipe-feature-title {
+                margin-bottom: 14px;
+            }
+            .recipe-feature-text {
+                margin-bottom: 22px;
+                color: rgba(74, 16, 20, 0.78);
+            }
+            .recipe-facts {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 26px;
+            }
+            .recipe-fact {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 14px 8px 10px;
+                border: 1px solid rgba(74, 16, 20, 0.18);
+                border-radius: 100px;
+                font-size: 14px;
+                line-height: 1;
+            }
+            .recipe-fact img {
+                width: 20px;
+                height: 20px;
+                flex: none;
+                object-fit: contain;
+            }
+            .recipe-feature-cta {
+                display: inline-block;
+                padding: 14px 26px;
+                border-radius: 5px;
+                background-color: var(--dark-green);
+                border: 1px solid var(--dark-green);
+                color: #fff;
+                font-size: 15px;
+                line-height: 1;
+            }
+            .recipe-feature:hover .recipe-feature-cta {
+                background-color: transparent;
+                color: var(--dark-green);
+            }
+            .grid-recipe-soon {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 24px;
+                grid-row-gap: 24px;
+                margin-bottom: 34px;
+            }
+            .recipe-soon {
+                padding: 28px 26px;
+                border: 1px dashed rgba(74, 16, 20, 0.25);
+                border-radius: 10px;
+                background-color: rgba(239, 168, 58, 0.07);
+            }
+            .recipe-soon-icon {
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+                margin-bottom: 14px;
+                opacity: 0.85;
+            }
+            .recipe-soon h6 {
+                margin-bottom: 6px;
+            }
+            .recipe-soon p {
+                margin: 0;
+                font-size: 15px;
+                color: rgba(74, 16, 20, 0.65);
+            }
+            @media screen and (max-width: 991px) {
+                .recipe-feature {
+                    grid-template-columns: 1fr;
+                    padding: 24px;
+                }
+                .grid-recipe-soon {
+                    grid-template-columns: 1fr;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .recipes-hero {
+                    padding-top: 40px;
+                }
+                .recipe-feature-cta {
+                    display: block;
+                    text-align: center;
+                }
+            }
         </style>
     </head>
     <body>
@@ -616,8 +1017,8 @@
                 <div class="w-layout-grid grid-navbar">
                     <nav class="nav-menu w-nav-menu" role="navigation">
                         <a class="nav-link w-nav-link" href="/home-shop.html">Products</a
-                        ><a class="nav-link w-nav-link" href="/recipes.html">Recipes</a
-                        ><a aria-current="page" class="nav-link w-nav-link w--current" href="/our-story.html">Our story</a
+                        ><a aria-current="page" class="nav-link w-nav-link w--current" href="/recipes.html">Recipes</a
+                        ><a class="nav-link w-nav-link" href="/our-story.html">Our story</a
                         ><a class="nav-link w-nav-link" href="/contact.html">Contact</a>
                     </nav>
                     <a class="w-nav-brand" href="/" id="w-node-_7e1b0c2e-5e38-0a09-6d7a-0a8659b16665-59b16659"
@@ -1088,148 +1489,79 @@
                 </div>
             </div>
         </div>
-        <div class="about-section section-spacing">
+        <div class="recipes-hero section-spacing">
             <div class="container w-container">
-                <div class="w-layout-grid grid-about-page">
-                    <div class="about-content" id="w-node-ddabcac1-4031-4a2b-ba87-7a0537312361-30d42b3d">
-                        <div class="section-title">
-                            <h1 class="inner-hero-tile">Twenty years spent getting one sauce right<br /></h1>
-                        </div>
-                        <p>
-                            M’Dee started in 2006 as a hobby that got out of hand. Mohd Rosidi Abdul Rashid was
-                            teaching computer science in Bukit Mertajam and cooking at home in the evenings. He kept
-                            adjusting one recipe, the sauce for char koay teow, until friends stopped asking for the
-                            recipe and started asking him to bottle it. He made five hundred bottles. They
-                            sold.<br />‍<br />He took early retirement from teaching and moved production into
-                            Kompleks Perda Food Park in Tasek Gelugor. The recipe has not changed since. The kitchen
-                            now turns out thousands of bottles a month, holds Halal certification from JAKIM and MeSTI
-                            from the Ministry of Health, and reaches homes through Mydin, Sunshine, Agrobazaar, Shopee,
-                            Lazada and TikTok Shop.<br />
-                        </p>
+                <div class="page-eyebrow">Recipes</div>
+                <div class="section-title">
+                    <h1 class="inner-hero-tile">What you can cook<br /></h1>
+                </div>
+                <p class="page-lead">
+                    Every M’Dee bottle is built around one dish. Open it, and most of the cooking is already
+                    behind you. Here is the first one, with more on the way.
+                </p>
+            </div>
+        </div>
+        <div class="recipe-feature-section section-spacing-bottom">
+            <div class="container w-container">
+                <a class="recipe-feature" href="/how-it-works.html">
+                    <div class="recipe-feature-image">
                         <img
-                            alt=""
-                            class="sign"
-                            loading="lazy"
-                            sizes="100vw"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b29b28a6a3d492214127f8_sign.png"
-                            srcset="
-                                https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b29b28a6a3d492214127f8_sign-p-500.png  500w,
-                                https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b29b28a6a3d492214127f8_sign-p-800.png  800w,
-                                https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b29b28a6a3d492214127f8_sign.png       1195w
-                            "
-                        />
-                    </div>
-                    <div class="about-image-wrap">
-                        <img
-                            alt=""
-                            class="about-image-2"
+                            alt="A plate of Penang char koay teow"
                             loading="eager"
-                            sizes="(max-width: 479px) 94vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 95vw"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b1bf43bb1ed44e1426e883_about-2.jpg"
-                            srcset="
-                                https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b1bf43bb1ed44e1426e883_about-2-p-500.jpeg 500w,
-                                https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b1bf43bb1ed44e1426e883_about-2.jpg        700w
-                            "
-                        /><img
-                            alt=""
-                            class="shape-12"
-                            loading="lazy"
-                            src="asset/icons/lemongrass.png"
-                            style="
-                                -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                    rotateZ(359deg) skew(0, 0);
-                                -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                    rotateZ(359deg) skew(0, 0);
-                                -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                    rotateZ(359deg) skew(0, 0);
-                                transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(359deg)
-                                    skew(0, 0);
-                            "
+                            src="asset/GAMBAR%20CHAR%20KOAY%20TEOW.png"
                         />
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="our-mission-section section-spacing">
-            <div class="container w-container">
-                <div class="w-layout-grid grid-mission">
-                    <div class="mission-image-wrap" id="w-node-_6458f0ff-95f6-3842-133d-957c05af1cf3-30d42b3d">
-                        <div id="w-node-_76e9b0ac-3da6-b014-4c03-0a4534fab2d5-30d42b3d">
-                            <img
-                                alt=""
-                                class="mission-image-2"
-                                data-w-id="2e13d84d-b9aa-a419-b9d1-c082cf950790"
-                                loading="lazy"
-                                sizes="100vw"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bb16cd148dd670c9a60f_about-3.jpg"
-                                srcset="
-                                    https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bb16cd148dd670c9a60f_about-3-p-500.jpeg 500w,
-                                    https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bb16cd148dd670c9a60f_about-3.jpg        600w
-                                "
-                            />
-                        </div>
-                        <div class="mission-image-right" id="w-node-_9a4ff15a-f075-3744-5574-bf66d1a2567a-30d42b3d">
-                            <img
-                                alt=""
-                                class="mission-image-1"
-                                data-w-id="47f4a474-e3e4-5065-0c11-26eda919e1d7"
-                                loading="lazy"
-                                sizes="(max-width: 479px) 6px, 1vw"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bb27d79e454249c0ddab_about-4.jpg"
-                                srcset="
-                                    https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bb27d79e454249c0ddab_about-4-p-500.jpeg 500w,
-                                    https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bb27d79e454249c0ddab_about-4.jpg        600w
-                                "
-                            /><img
-                                alt=""
-                                class="mission-image-3"
-                                loading="lazy"
-                                sizes="100vw"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bd2bf1619a3474a49eec_about-5.jpg"
-                                srcset="
-                                    https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bd2bf1619a3474a49eec_about-5-p-500.jpeg 500w,
-                                    https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b2bd2bf1619a3474a49eec_about-5.jpg        600w
-                                "
-                            />
-                        </div>
-                    </div>
-                    <div class="mission-content" id="w-node-_822234be-c6a9-003a-7dfb-2808fe2df15b-30d42b3d">
-                        <div class="section-title">
-                            <h4 class="mission-title">
-                                Our mission is to hand every home cook the Penang hawker taste, without the twenty
-                                years of practice behind it
-                            </h4>
-                            <p>
-                                A proper char koay teow lives or dies on the sauce, and that is the part that takes
-                                decades to balance. We have done it for you. You bring the prawns, the egg, the kuey
-                                teow and a hot wok, and dinner tastes like the stall you grew up with.
-                            </p>
-                        </div>
-                        <a class="button w-button" href="https://wa.me/60164432630" rel="noopener" target="_blank">Contact us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="team-section section-spacing">
-            <div class="container w-container">
-                <div class="section-title text-center"><h2>Meet the founder</h2></div>
-                <div class="w-dyn-list">
-                    <div class="grid-team w-dyn-items" role="list">
-                        <!-- PLACEHOLDER PHOTO: this is still a stock image from the template.
-                             Replace src with a real photograph of Mohd Rosidi before publishing. -->
-                        <div class="w-dyn-item" role="listitem">
-                            <a class="team-item w-inline-block" href="/our-story.html"
-                                ><img
-                                    alt="Mohd Rosidi Abdul Rashid, founder of M’Dee"
-                                    class="team-image"
-                                    loading="eager"
-                                    src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba84dc2013a707ddaeedcd_team-6.jpg"
-                                />
-                                <h5 class="team-title">Mohd Rosidi Abdul Rashid</h5>
-                                <p>Founder, MDEE Enterprise</p></a
+                    <div class="recipe-feature-content">
+                        <div class="recipe-tag">Penang classic</div>
+                        <h2 class="recipe-feature-title">Char koay teow</h2>
+                        <p class="recipe-feature-text">
+                            Flat rice noodles, prawns, egg, beansprouts and kucai, tossed hard in a hot wok. The
+                            sauce is the part that takes twenty years to get right, and that part is already in the
+                            bottle.
+                        </p>
+                        <div class="recipe-facts">
+                            <span class="recipe-fact"
+                                ><img alt="" loading="lazy" src="asset/icons/color/clock.png" />About 10 minutes</span
+                            ><span class="recipe-fact"
+                                ><img alt="" loading="lazy" src="asset/icons/color/wok.png" />One wok</span
+                            ><span class="recipe-fact"
+                                ><img alt="" loading="lazy" src="asset/icons/color/prawn.png" />Serves two</span
                             >
                         </div>
+                        <span class="recipe-feature-cta">See how to cook it</span>
                     </div>
+                </a>
+            </div>
+        </div>
+        <div class="recipe-soon-section section-spacing-bottom">
+            <div class="container w-container">
+                <div class="section-title"><h2>Coming next</h2></div>
+                <div class="grid-recipe-soon">
+                    <div class="recipe-soon">
+                        <img alt="" class="recipe-soon-icon" loading="lazy" src="asset/icons/color/wok.png" />
+                        <h6>Mi goreng mamak</h6>
+                        <p>With Perencah Mi Goreng Mamak.</p>
+                    </div>
+                    <div class="recipe-soon">
+                        <img alt="" class="recipe-soon-icon" loading="lazy" src="asset/icons/color/mortar.png" />
+                        <h6>Nasi goreng kampung</h6>
+                        <p>With Perencah Nasi Goreng Kampung.</p>
+                    </div>
+                    <div class="recipe-soon">
+                        <img alt="" class="recipe-soon-icon" loading="lazy" src="asset/icons/color/chilli.png" />
+                        <h6>Sambal on anything</h6>
+                        <p>Petai bilis, talang masin, sambal tumis.</p>
+                    </div>
+                </div>
+                <div class="page-actions recipe-soon-actions">
+                    <a class="button w-button" href="/home-shop.html">Shop the range</a>
+                    <a
+                        class="button page-button-ghost w-button"
+                        href="https://wa.me/60164432630"
+                        rel="noopener"
+                        target="_blank"
+                        >Ask us a cooking question</a
+                    >
                 </div>
             </div>
         </div>
@@ -1255,10 +1587,10 @@
                                 ><a class="footer-link" href="/home-shop.html">Home Shop</a
                                 ><a class="footer-link" href="/home-shop.html">Products (CMS)</a
                                 ><a class="footer-link" href="/home-shop.html">Shop (Ecom)</a
-                                ><a class="footer-link" href="/recipes.html">Recipes</a>
+                                ><a aria-current="page" class="footer-link w--current" href="/recipes.html">Recipes</a>
                             </div>
                             <div class="footer-links-block" id="w-node-ed138bd9-6e00-f035-78ea-10fd8591a272-8591a259">
-                                <a aria-current="page" class="footer-link w--current" href="/our-story.html">Our Story</a
+                                <a class="footer-link" href="/our-story.html">Our Story</a
                                                                 ><a class="footer-link" href="/how-it-works.html">How To Cook</a
                                 ><a class="footer-link" href="/our-story.html">Our Founder</a
                                 ><a class="footer-link" href="/home-shop.html">Where To Buy</a

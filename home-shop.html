@@ -1,7 +1,6 @@
 <!doctype html>
-<!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Fri Jan 30 2026 05:51:54 GMT+0000 (Coordinated Universal Time) -->
 <html
-    data-wf-domain="bewellfed-wbs.webflow.io"
+    data-wf-domain="mdee-website.vercel.app"
     data-wf-page="62b554a091356dce0abdf9f5"
     data-wf-site="62b03a7e084ea567885272c1"
     lang="en"
@@ -9,33 +8,31 @@
     <head>
         <meta charset="utf-8" />
         <link crossorigin="anonymous" href="https://cdn.prod.website-files.com" rel="preconnect" />
-        <title>beWellfed - Webflow Ecommerce website template</title>
+        <title>Shop M’Dee — Penang Sauces, Cooking Pastes &amp; Sambal</title>
         <meta
-            content="beWellfed is a food website CMS and eCommerce template. Suitable for a food delivery company, organic food shops, and other food-related service websites."
+            content="Browse the full M'Dee range: char koay teow sauce and paste, mee goreng mamak, nasi goreng kampung and sambal. Halal-certified, made in Penang since 2006."
             name="description"
         />
-        <meta content="beWellfed - Webflow Ecommerce website template" property="og:title" />
+        <meta content="M’Dee — Rahsia rasa ori Penang" property="og:title" />
         <meta
-            content="beWellfed is a food website CMS and eCommerce template. Suitable for a food delivery company, organic food shops, and other food-related service websites."
+            content="Browse the full M'Dee range: char koay teow sauce and paste, mee goreng mamak, nasi goreng kampung and sambal. Halal-certified, made in Penang since 2006."
             property="og:description"
         />
+        <meta content="https://mdee-website.vercel.app/home-shop.html" property="og:url" />
+        <meta content="M’Dee" property="og:site_name" />
+        <meta content="https://mdee-website.vercel.app/asset/og-image.jpg" property="og:image" />
+        <meta content="1200" property="og:image:width" />
+        <meta content="630" property="og:image:height" />
+        <meta content="M’Dee — Penang char koay teow sauce, pastes and sambal" property="og:image:alt" />
+        <meta content="M’Dee — Rahsia rasa ori Penang" name="twitter:title" />
         <meta
-            content="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfede84bbb9c02a8273150_open-graph.jpg"
-            property="og:image"
-        />
-        <meta content="beWellfed - Webflow Ecommerce website template" name="twitter:title" />
-        <meta
-            content="beWellfed is a food website CMS and eCommerce template. Suitable for a food delivery company, organic food shops, and other food-related service websites."
+            content="Browse the full M'Dee range: char koay teow sauce and paste, mee goreng mamak, nasi goreng kampung and sambal. Halal-certified, made in Penang since 2006."
             name="twitter:description"
         />
-        <meta
-            content="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfede84bbb9c02a8273150_open-graph.jpg"
-            name="twitter:image"
-        />
+        <meta content="https://mdee-website.vercel.app/asset/og-image.jpg" name="twitter:image" />
         <meta content="website" property="og:type" />
         <meta content="summary_large_image" name="twitter:card" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta content="Webflow" name="generator" />
         <link
             crossorigin="anonymous"
             href="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/css/bewellfed-wbs.webflow.shared.e69463cd7.css"
@@ -58,19 +55,14 @@
                         (n.className += t + "touch");
             })(window, document);
         </script>
-        <link
-            href="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6e71b1a11bd0d2c990524_favicon.png"
-            rel="shortcut icon"
-            type="image/x-icon"
-        />
-        <link
-            href="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6e71d0c4d68e450c18586_webclip.png"
-            rel="apple-touch-icon"
-        />
+        <link href="asset/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
+        <link href="asset/favicon-512.png" rel="icon" sizes="512x512" type="image/png" />
+        <link href="asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
         <script type="text/javascript">
             window.__WEBFLOW_CURRENCY_SETTINGS = {
-                currencyCode: "USD",
-                symbol: "$",
+                currencyCode: "MYR",
+                symbol: "RM ",
                 decimal: ".",
                 fractionDigits: 2,
                 group: ",",
@@ -80,10 +72,783 @@
             };
         </script>
         <style>
-            .w-webflow-badge {
+            /* Color override: dark green -> dark red */
+            :root,
+            html body {
+                --dark-green: #4a1014;
+                --pale-green: #ffffff;
+                --ink-filter: brightness(0) saturate(100%) invert(51%) sepia(58.3%) saturate(3642%)
+                    hue-rotate(325deg) brightness(31.1%) contrast(110.6%);
+            }
+            /* M'deelicious logo sizing */
+            .logo {
+                height: 62px;
+                width: auto;
+                max-width: 100%;
+            }
+            .footer-brand .logo {
+                height: 84px;
+            }
+            @media screen and (max-width: 767px) {
+                .footer-brand .logo { height: 64px; }
+            }
+            /* Marketplace buy buttons */
+            .grid-product .w-dyn-item {
+                display: flex;
+            }
+            .product-item {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .product-item .product-info {
+                flex: 1 1 auto;
+            }
+            .buy-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: auto;
+                padding-top: 18px;
+            }
+            .buy-btn {
+                flex: 1 1 110px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 12px 10px;
+                border-radius: 5px;
+                border: 1px solid var(--dark-green);
+                font-size: 14px;
+                line-height: 1;
+                white-space: nowrap;
+                text-decoration: none;
+                transition: all 0.2s ease-in-out;
+            }
+            .buy-btn svg {
+                width: 17px;
+                height: 17px;
+                flex: none;
+            }
+            .buy-shopee {
+                background-color: var(--dark-green);
+                color: #fff;
+            }
+            .buy-shopee:hover {
+                background-color: #fff;
+                color: var(--dark-green);
+            }
+            .buy-tiktok {
+                background-color: transparent;
+                color: var(--dark-green);
+            }
+            .buy-tiktok:hover {
+                background-color: var(--dark-green);
+                color: #fff;
+            }
+            @media screen and (max-width: 479px) {
+                .buy-btn {
+                    flex: 1 1 100%;
+                }
+            }
+            /* --- Navbar balance ---------------------------------------------------
+               One filled control only. The hamburger was a second solid dark block
+               next to the CTA, which made the right side read as a heavy slab.
+               On phones the WhatsApp button also comes out of the bar: the floating
+               WhatsApp button is already on every page, so it was duplicated. */
+            .navbar {
+                border-bottom-color: rgba(74, 16, 20, 0.18);
+            }
+            @media screen and (max-width: 991px) {
+                .nav-wa {
+                    display: none;
+                }
+                .logo {
+                    height: 56px;
+                }
+                .nav-button-wrap {
+                    gap: 12px;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    padding-left: 18px;
+                    padding-right: 18px;
+                    font-size: 15px;
+                }
+                .navbar {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+            }
+            @media screen and (max-width: 479px) {
+                .logo {
+                    height: 50px;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    font-size: 14px;
+                }
+            }
+            /* --- Navbar controls: one height, one radius, one visual family ---
+               NB: never set `display` on .w-nav-button outside a mobile media query.
+               Webflow hides it with display:none above the collapse breakpoint, so
+               setting display here makes the hamburger appear on desktop. */
+            .nav-wa,
+            .nav-button-wrap .button-dark.w-button {
+                height: 42px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                border-radius: 8px;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .nav-wa {
+                gap: 9px;
+                padding: 0 15px;
+                border: 1px solid rgba(74, 16, 20, 0.3);
+                font-size: 15px;
+            }
+            .nav-wa:hover {
+                background-color: var(--dark-green);
+                border-color: var(--dark-green);
+                color: #fff;
+                opacity: 1;
+            }
+            .nav-button-wrap .button-dark.w-button {
+                padding-left: 20px;
+                padding-right: 20px;
+                border-width: 1px;
+            }
+
+            /* --- Mobile dropdown panel --- */
+            @media screen and (max-width: 991px) {
+                .nav-button.w-nav-button {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-sizing: border-box;
+                    width: 42px;
+                    height: 42px;
+                    padding: 0;
+                    border: 1px solid rgba(74, 16, 20, 0.3);
+                    border-radius: 8px;
+                    background-color: transparent;
+                    color: var(--dark-green);
+                    float: none;
+                }
+                .nav-button.w-nav-button .w-icon-nav-menu {
+                    font-size: 19px;
+                    line-height: 1;
+                }
+                .nav-button.w-nav-button:hover {
+                    background-color: rgba(74, 16, 20, 0.06);
+                }
+                .nav-button.w-nav-button.w--open {
+                    background-color: var(--dark-green);
+                    border-color: var(--dark-green);
+                    color: #fff;
+                }
+                /* Webflow animates .w-nav-overlay's HEIGHT open, often to the full
+                   viewport. Never give it a background: it would sheet over the page
+                   and make everything below look blank. Paint the menu panel only.
+                   Do NOT force height:auto here either: the panel inside is
+                   absolutely positioned, so the overlay collapses to zero and its
+                   overflow:hidden clips the whole menu away. */
+                .w-nav-overlay {
+                    background-color: transparent;
+                    background-image: none;
+                    box-shadow: none;
+                    border: 0;
+                    padding: 0;
+                }
+                /* Webflow slides the panel in with a transform. When that animation
+                   does not settle the menu stays parked above the viewport and the
+                   hamburger looks dead, so pin the open panel in place. */
+                .w-nav-overlay .nav-menu.w-nav-menu,
+                .nav-menu.w-nav-menu[style] {
+                    transform: none !important;
+                    -webkit-transform: none !important;
+                    transition: none !important;
+                }
+                .nav-menu.w-nav-menu {
+                    background-color: #f9f2e6;
+                    border-bottom: 1px solid rgba(74, 16, 20, 0.18);
+                    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+                    padding: 4px 22px 12px;
+                }
+                .nav-menu .nav-link.w-nav-link {
+                    display: block;
+                    width: 100%;
+                    padding: 16px 0;
+                    margin: 0;
+                    border-bottom: 1px solid rgba(74, 16, 20, 0.12);
+                    font-size: 17px;
+                    line-height: 1.2;
+                    color: var(--dark-green);
+                    text-align: left;
+                }
+                .nav-menu .nav-link.w-nav-link:last-child {
+                    border-bottom: 0;
+                }
+                .nav-menu .nav-link.w-nav-link.w--current {
+                    opacity: 0.55;
+                }
+                .nav-wa {
+                    width: 42px;
+                    padding: 0;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    font-size: 14px;
+                }
+            }
+
+            /* --- CTA buttons ---------------------------------------------------
+               Primary actions are filled dark red; the two "View ..." links stay
+               as the lighter outline so there is still a primary/secondary split. */
+            .button.w-button,
+            .button.product-button {
+                background-color: var(--dark-green);
+                border: 1px solid var(--dark-green);
+                color: #fff;
+                transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+                    border-color 0.2s ease-in-out;
+            }
+            .button.w-button:hover,
+            .button.product-button:hover,
+            .product-item:hover .button.product-button {
+                background-color: transparent;
+                color: var(--dark-green);
+                border-color: var(--dark-green);
+            }
+            /* secondary */
+            .section-title .button.w-button,
+            .story-content .button.w-button {
+                background-color: transparent;
+                border-color: rgba(74, 16, 20, 0.3);
+                color: var(--dark-green);
+            }
+            .section-title .button.w-button:hover,
+            .story-content .button.w-button:hover {
+                background-color: var(--dark-green);
+                border-color: var(--dark-green);
+                color: #fff;
+            }
+            /* --- Navbar social icons --- */
+            .nav-social {
+                display: flex;
+                align-items: center;
+                gap: 0.35rem;
+                flex-shrink: 0;
+            }
+            .nav-social-link {
+                width: 2.35rem;
+                height: 2.35rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                border: 1px solid rgba(74, 16, 20, 0.22);
+                border-radius: 9px;
+                background-color: rgba(74, 16, 20, 0.06);
+                color: var(--dark-green);
+                text-decoration: none;
+                transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+            }
+            .nav-social-link svg {
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+                display: block;
+            }
+            .nav-social-link:hover {
+                background-color: rgba(74, 16, 20, 0.12);
+                border-color: rgba(74, 16, 20, 0.38);
+                color: var(--dark-green);
+                transform: translateY(-1px);
+            }
+            /* Desktop header: drop the digits, keep WhatsApp as a third icon tile
+               so it reads as a set with Facebook and TikTok. */
+            .nav-wa span {
+                display: none;
+            }
+            .nav-wa {
+                width: 2.35rem;
+                height: 2.35rem;
+                padding: 0;
+                gap: 0;
+                border: 1px solid rgba(74, 16, 20, 0.22);
+                border-radius: 9px;
+                background-color: rgba(74, 16, 20, 0.06);
+                transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+            }
+            .nav-wa svg {
+                width: 18px;
+                height: 18px;
+            }
+            .nav-wa:hover {
+                background-color: rgba(74, 16, 20, 0.12);
+                border-color: rgba(74, 16, 20, 0.38);
+                color: var(--dark-green);
+                opacity: 1;
+                transform: translateY(-1px);
+            }
+            @media screen and (min-width: 992px) {
+                .nav-button-wrap {
+                    gap: 0.35rem;
+                }
+                .nav-wa {
+                    order: 1;
+                }
+                .nav-social {
+                    order: 2;
+                }
+                .nav-button-wrap .button-dark.w-button {
+                    order: 3;
+                    margin-left: 14px;
+                }
+            }
+            /* Mobile navbar: the grid has 4 children (menu, logo, buttons, hamburger),
+               so the hamburger wrapped onto its own row. Flex row instead. */
+            @media screen and (max-width: 991px) {
+                /* Row 1: logo centred over a hairline rule.
+                   Row 2: bare hamburger | "Shop products" as plain type | social tiles. */
+                .navbar {
+                    padding: 14px 0 16px;
+                    border-bottom: 0;
+                }
+                .grid-navbar {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    grid-column-gap: 26px;
+                    grid-row-gap: 16px;
+                    align-items: center;
+                }
+                /* !important: Webflow emits #w-node-... { grid-area: ... } rules for these
+                   children, and an ID selector outranks anything class-based here. */
+                .w-nav-brand {
+                    grid-column: 1 / -1 !important;
+                    grid-row: 1 !important;
+                    grid-area: 1 / 1 / 2 / 3 !important;
+                    justify-self: stretch !important;
+                    align-self: center !important;
+                    text-align: center;
+                    padding-bottom: 14px;
+                    border-bottom: 1px solid rgba(74, 16, 20, 0.22);
+                }
+                .logo {
+                    height: 54px;
+                }
+                /* bare icon, no box */
+                .nav-button.w-nav-button {
+                    grid-area: 2 / 1 / 3 / 2 !important;
+                    justify-self: start !important;
+                    width: auto;
+                    height: auto;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 0;
+                    background-color: transparent;
+                    color: var(--dark-green);
+                }
+                .nav-button.w-nav-button:hover,
+                .nav-button.w-nav-button.w--open {
+                    background-color: transparent;
+                    border: 0;
+                    color: var(--dark-green);
+                    opacity: 0.6;
+                }
+                .nav-button.w-nav-button .w-icon-nav-menu {
+                    font-size: 23px;
+                }
+                /* .grid-navbar prefix: the base .nav-button-wrap rule sits later in
+                   this stylesheet, so an equal-specificity selector would lose to it */
+                .grid-navbar .nav-button-wrap {
+                    grid-area: 2 / 2 / 3 / 3 !important;
+                    justify-self: stretch !important;
+                    width: 100%;
+                    justify-content: flex-start;
+                    gap: 10px;
+                }
+                /* the CTA becomes plain type, as in the reference */
+                .nav-button-wrap .button-dark.w-button {
+                    height: auto;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 0;
+                    background-color: transparent;
+                    color: var(--dark-green);
+                    font-family: "Nuosu SIL", Georgia, serif;
+                    font-size: clamp(15px, 4vw, 18px);
+                    line-height: 1.1;
+                    letter-spacing: 0.01em;
+                    white-space: nowrap;
+                }
+                .nav-button-wrap .button-dark.w-button:hover {
+                    background-color: transparent;
+                    color: var(--dark-green);
+                    opacity: 0.6;
+                }
+                .nav-social {
+                    margin-left: auto;
+                }
+                .nav-menu {
+                    grid-area: 3 / 1 / 4 / 3 !important;
+                }
+            }
+            @media screen and (max-width: 479px) {
+                .nav-button-wrap {
+                    gap: 8px;
+                }
+            }
+            /* Navbar right-hand side (base) */
+            .nav-button-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 18px;
+            }
+            .nav-wa {
+                color: var(--dark-green);
+                text-decoration: none;
+                white-space: nowrap;
+                transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+            }
+            .nav-wa svg {
+                width: 19px;
+                height: 19px;
+                flex: none;
+            }
+            .button-dark.w-button {
+                white-space: nowrap;
+            }
+            /* The cart can't check out — products are sold on Shopee and TikTok Shop */
+            .w-commerce-commercecartwrapper {
+                display: none !important;
+            }
+            /* phones: WhatsApp leaves the bar (the floating button covers it) */
+            @media screen and (max-width: 991px) {
+                .nav-wa {
+                    display: none;
+                }
+            }
+            /* Icon boxes: every icon renders in the same fixed square, whatever its file */
+            .marquee-item img,
+            .hero-icon {
+                width: 64px;
+                height: 64px;
+                object-fit: contain;
+                flex: none;
+            }
+            @media screen and (max-width: 991px) {
+                .marquee-item img,
+                .hero-icon {
+                    width: 52px;
+                    height: 52px;
+                }
+            }
+            @media screen and (max-width: 479px) {
+                .marquee-item img,
+                .hero-icon {
+                    width: 44px;
+                    height: 44px;
+                }
+            }
+            /* Recolour the template's green line-art SVGs to the brand palette.
+               --ink-filter turns any icon into #4a1014; brightness(0) invert(1) turns it white. */
+            .hero-icon,
+            .footer-social-icon,
+            .story-social-icon,
+            .tab-link-image {
+                filter: var(--ink-filter);
+            }
+            .marquee-item img {
+                filter: brightness(0) invert(1);
+                opacity: 0.92;
+            }
+            .decoration img,
+            .shape-1,
+            .shape-5,
+            .shape-6,
+            .shape-7,
+            .shape-9,
+            .shape-10,
+            .shape-11 {
+                filter: var(--ink-filter);
+                opacity: 0.22;
+            }
+            .shape-12 {
+                filter: brightness(0) invert(1);
+                opacity: 0.18;
+            }
+            /* Softer card outlines */
+            .product-item,
+            .product-image-wrap,
+            .product-meal,
+            .menu-item,
+            .menu-image-wrap,
+            .recipe-item,
+            .recipe-image-wrap,
+            .team-item,
+            .step-imaga-wrap {
+                border-color: rgba(74, 16, 20, 0.18);
+            }
+            .buy-tiktok {
+                border-color: rgba(74, 16, 20, 0.4);
+            }
+            /* Page hero on smaller screens: the template left a big empty
+               band above the headline */
+            @media screen and (max-width: 991px) {
+                .hero-bg-section {
+                    padding-top: 56px;
+                    padding-bottom: 56px;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .hero-bg-section {
+                    padding-top: 38px;
+                    padding-bottom: 44px;
+                }
+                .button.hero-button {
+                    margin-top: 28px;
+                }
+            }
+            /* Feature band photo: the template floated a cut-out sticker here,
+               ours is a real photograph so it is framed inside the column */
+            .action-box-simple-image-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-left: 60px;
+            }
+            @media screen and (max-width: 991px) {
+                .action-box-simple-image-wrap {
+                    padding-left: 0;
+                }
+            }
+            .action-box-simple-image {
+                position: static !important;
+                inset: auto !important;
+                width: 100%;
+                max-width: 480px;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 18px 44px rgba(74, 16, 20, 0.16);
+            }
+            @media screen and (max-width: 991px) {
+                .action-box-simple-image {
+                    max-width: 420px;
+                }
+            }
+            @media screen and (min-width: 992px) {
+                .grid-action-box-simple {
+                    grid-template-columns: 1fr 1.05fr;
+                    grid-column-gap: 20px;
+                }
+                .action-box-simple-image-wrap {
+                    padding-left: 40px;
+                }
+                .action-box-simple-image {
+                    max-width: 520px;
+                }
+            }
+            /* The right-hand column of that band: eyebrow, lead, proof points, two CTAs */
+            .action-box-simple-content {
+                padding-right: 30px;
+            }
+            .band-eyebrow {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: rgba(74, 16, 20, 0.62);
+            }
+            .band-eyebrow::before {
+                content: "";
+                width: 28px;
+                height: 1px;
+                flex: none;
+                background-color: rgba(74, 16, 20, 0.45);
+            }
+            .action-box-simple .action-box-simple-title {
+                margin-bottom: 18px;
+            }
+            .band-lead {
+                max-width: 540px;
+                margin: 0 0 30px;
+                color: rgba(74, 16, 20, 0.78);
+            }
+            .band-points {
+                list-style: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 26px;
+                grid-row-gap: 16px;
+                margin: 0 0 34px;
+                padding: 0;
+            }
+            .band-point {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 15px;
+                line-height: 1.35;
+            }
+            .band-point-icon {
+                width: 28px;
+                height: 28px;
+                flex: none;
+                object-fit: contain;
+                filter: var(--ink-filter);
+                opacity: 0.85;
+            }
+            .band-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .band-actions .button.w-button {
+                margin: 0;
+            }
+            .band-button-ghost.w-button {
+                background-color: transparent;
+                border: 1px solid rgba(74, 16, 20, 0.35);
+                color: var(--dark-green);
+            }
+            .band-button-ghost.w-button:hover {
+                background-color: var(--dark-green);
+                border-color: var(--dark-green);
+                color: #fff;
+            }
+            @media screen and (max-width: 991px) {
+                .action-box-simple-content {
+                    padding-right: 0;
+                }
+                .band-lead {
+                    max-width: none;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .band-points {
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 14px;
+                    margin-bottom: 28px;
+                }
+                .band-actions .button.w-button {
+                    flex: 1 1 100%;
+                    text-align: center;
+                }
+            }
+            /* Combo sets: equal-height cards, tops and buttons on one line */
+            .grid-meal {
+                align-items: stretch !important;
+            }
+            .grid-meal .w-dyn-item {
+                display: flex;
+            }
+            .grid-meal .product-meal {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                transform: none !important;
+            }
+            .grid-meal .product-meal-image-wrap {
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                overflow: hidden;
+            }
+            .grid-meal .product-meal-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .grid-meal .product-meal-detail {
+                flex: 1 1 auto;
+            }
+            .grid-meal .product-meal .button.product-button {
+                margin-top: auto;
+            }
+            @supports not (aspect-ratio: 4 / 3) {
+                .grid-meal .product-meal-image-wrap {
+                    height: 260px;
+                }
+            }
+            /* Floating WhatsApp button (bottom left) */
+            .wa-float {
+                position: fixed;
+                left: 24px;
+                bottom: 24px;
+                z-index: 9990;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 12px 18px 12px 14px;
+                border-radius: 100px;
+                background: var(--dark-green);
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                text-decoration: none;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+                transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+            .wa-float:hover {
+                color: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+            }
+            .wa-float svg {
+                width: 22px;
+                height: 22px;
+                flex: none;
+                display: block;
+            }
+            .wa-float:hover {
+                background: #5f161b;
+            }
+            @media screen and (max-width: 767px) {
+                .wa-float {
+                    left: 16px;
+                    bottom: 16px;
+                    padding: 14px;
+                }
+                .wa-float .wa-label {
+                    display: none;
+                }
+            }
+            .w-webflow-badge,
+            a.w-webflow-badge,
+            div.w-webflow-badge,
+            [class*="w-webflow-badge"] {
                 position: fixed !important;
-                display: None !important;
+                display: none !important;
                 visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+            }
+            /* The two-tone icon set is already in brand colour: keep the ink
+               filter off it. Certification marks stay untouched. */
+            img[src*="icons/color"] {
+                filter: none !important;
             }
         </style>
     </head>
@@ -100,42 +865,46 @@
             <div class="container w-container">
                 <div class="w-layout-grid grid-navbar">
                     <nav class="nav-menu w-nav-menu" role="navigation">
-                        <a class="nav-link w-nav-link" href="/our-menu">Our Menu</a
-                        ><a class="nav-link w-nav-link" href="/our-story">Our story</a
-                        ><a class="nav-link w-nav-link" href="/how-it-works">How It Works</a>
-                        <div class="nav-link w-dropdown" data-delay="0" data-hover="true">
-                            <div class="dropdown-toggle w-dropdown-toggle">
-                                <div class="dropdown-icon w-icon-dropdown-toggle"></div>
-                                <div>Pages</div>
-                            </div>
-                            <nav class="dropdown-list w-dropdown-list">
-                                <a class="dropdown-link w-dropdown-link" href="/">Home</a
-                                ><a
-                                    aria-current="page"
-                                    class="dropdown-link w-dropdown-link w--current"
-                                    href="/home-shop"
-                                    >Home Shop</a
-                                ><a class="dropdown-link w-dropdown-link" href="/our-menu">Our Menu (CMS)</a
-                                ><a class="dropdown-link w-dropdown-link" href="/shop">Shop (Ecom)</a
-                                ><a class="dropdown-link w-dropdown-link" href="/recipe">Recipes</a
-                                ><a class="dropdown-link w-dropdown-link" href="/our-story">Our Story</a
-                                ><a class="dropdown-link w-dropdown-link" href="/how-it-works">How It Works</a
-                                ><a class="dropdown-link w-dropdown-link" href="/our-chef">Our Chef</a
-                                ><a class="dropdown-link w-dropdown-link" href="/location">Locations</a
-                                ><a class="dropdown-link w-dropdown-link" href="/contact">Contact</a>
-                            </nav>
-                        </div>
+                        <a class="nav-link w-nav-link" href="/home-shop.html">Products</a
+                        ><a class="nav-link w-nav-link" href="/recipes.html">Recipes</a
+                        ><a class="nav-link w-nav-link" href="/our-story.html">Our story</a
+                        ><a class="nav-link w-nav-link" href="/contact.html">Contact</a>
                     </nav>
                     <a class="w-nav-brand" href="/" id="w-node-_7e1b0c2e-5e38-0a09-6d7a-0a8659b16665-59b16659"
                         ><img
                             alt=""
                             class="logo"
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfeeaf622dd076e2779deb_bewellfed.svg"
+                            src="asset/logo-web.png"
                     /></a>
                     <div class="nav-button-wrap" id="w-node-_7e1b0c2e-5e38-0a09-6d7a-0a8659b16667-59b16659">
-                        <p class="nav-address">119 Tanglewood Lane<br />Gulfport, MS 39503</p>
-                        <a class="button-dark w-button" href="/our-menu">Our menu</a>
+                        <a
+                            aria-label="WhatsApp M’Dee on 016-4432630"
+                            class="nav-wa"
+                            href="https://wa.me/60164432630"
+                            rel="noopener"
+                            target="_blank"
+                            ><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"
+                                />
+                                <path
+                                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23a8.23 8.23 0 0 1 8.23 8.24c0 4.54-3.69 8.22-8.23 8.22z"
+                                />
+                            </svg>
+                            <span>016-4432630</span></a
+                        >
+                        <a class="button-dark w-button" href="/home-shop.html">Shop products</a>
+                        <div class="nav-social">
+                            <a
+                                aria-label="M’Dee on TikTok"
+                                class="nav-social-link"
+                                href="https://www.tiktok.com/@mdeelicious"
+                                rel="noopener"
+                                target="_blank"
+                                ><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg></a
+                            >
+                        </div>
                         <div
                             class="w-commerce-commercecartwrapper"
                             data-node-type="commerce-cart-wrapper"
@@ -533,7 +1302,7 @@
                                                         class="w-commerce-commercecartcheckoutbutton button"
                                                         data-loading-text="Hang Tight..."
                                                         data-node-type="cart-checkout-button"
-                                                        href="/checkout"
+                                                        href="/home-shop.html"
                                                         value="Continue to Checkout"
                                                         >Continue to Checkout</a
                                                     >
@@ -585,7 +1354,7 @@
                                 skew(0, 0);
                         "
                     >
-                        Real Food,<span class="body-font"></span>
+                        Real sauce,
                     </h1>
                 </div>
                 <div class="hero-heading-overflow">
@@ -602,10 +1371,10 @@
                                 skew(0, 0);
                         "
                     >
-                        Real <span class="body-font">Benefits</span>
+                        Real Penang
                     </h1>
                 </div>
-                <a class="button hero-button w-button" href="/shop">View menu</a>
+                <a class="button hero-button w-button" href="/home-shop.html">Shop the range</a>
             </div>
         </div>
         <div class="statistic-section">
@@ -615,89 +1384,89 @@
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a04fc89f59bdc0d26075_icon-1.svg"
+                            src="asset/icons/penang-flag.png"
                         />
-                        <h6 class="marquee-title">Direct <br />from Farm</h6>
+                        <h6 class="marquee-title">Made in <br />Penang</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a0fa5d1d736d2d8ba85d_icon-2.svg"
+                            src="asset/icons/halal.png"
                         />
-                        <h6 class="marquee-title">Committed <br />&amp; credible</h6>
+                        <h6 class="marquee-title">Halal <br />JAKIM certified</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a0ee7d8adb45fe0155af_icon-3.svg"
+                            src="asset/icons/mesti.png"
                         />
-                        <h6 class="marquee-title">High <br />nutritional value</h6>
+                        <h6 class="marquee-title">MeSTI <br />certified</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a10b3606cf04c79d3c41_icon-4.svg"
+                            src="asset/icons/no-seasoning.png"
                         />
-                        <h6 class="marquee-title">Empowering <br />you</h6>
+                        <h6 class="marquee-title">No extra <br />seasoning</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a11591de2d4d9f65f073_icon-5.svg"
+                            src="asset/icons/clock.png"
                         />
-                        <h6 class="marquee-title">Manually<br />processed</h6>
+                        <h6 class="marquee-title">Ready in <br />10 minutes</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a11f013435e77a1b78b0_icon-6.svg"
+                            src="asset/icons/recipe-book.png"
                         />
-                        <h6 class="marquee-title">No added <br />colors</h6>
+                        <h6 class="marquee-title">One recipe <br />since 2006</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a1284a3197a6f726b656_icon-7.svg"
+                            src="asset/icons/hibiscus.png"
                         />
-                        <h6 class="marquee-title">No dilution <br />or taste</h6>
+                        <h6 class="marquee-title">Bumiputera <br />owned</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a1371c5c7228c1b4a6ce_icon-8.svg"
+                            src="asset/icons/bottle-up.png"
                         />
-                        <h6 class="marquee-title">No chemicals <br />&amp; pesticides</h6>
+                        <h6 class="marquee-title">20,000+ bottles <br />sold online</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a156d00c8803af289546_icon-9.svg"
+                            src="asset/icons/wok.png"
                         />
-                        <h6 class="marquee-title">Preserves the <br />Environment</h6>
+                        <h6 class="marquee-title">Original <br />hawker taste</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a15f7d8adb6b9b015896_icon-10.svg"
+                            src="asset/icons/mortar.png"
                         />
-                        <h6 class="marquee-title">Certified <br />organic sources</h6>
+                        <h6 class="marquee-title">Penang <br />original recipe</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a1371c5c7228c1b4a6ce_icon-8.svg"
+                            src="asset/icons/shop.png"
                         />
-                        <h6 class="marquee-title">Direct <br />from Farm</h6>
+                        <h6 class="marquee-title">Sold at Mydin <br />&amp; Sunshine</h6>
                     </div>
                 </div>
                 <div class="marquee-text" data-w-id="f9c43193-fa3f-ba57-c872-cffd709e0df5">
@@ -705,597 +1474,291 @@
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a04fc89f59bdc0d26075_icon-1.svg"
+                            src="asset/icons/penang-flag.png"
                         />
-                        <h6 class="marquee-title">Direct <br />from Farm</h6>
+                        <h6 class="marquee-title">Made in <br />Penang</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a0fa5d1d736d2d8ba85d_icon-2.svg"
+                            src="asset/icons/halal.png"
                         />
-                        <h6 class="marquee-title">Committed <br />&amp; credible</h6>
+                        <h6 class="marquee-title">Halal <br />JAKIM certified</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a0ee7d8adb45fe0155af_icon-3.svg"
+                            src="asset/icons/mesti.png"
                         />
-                        <h6 class="marquee-title">High <br />nutritional value</h6>
+                        <h6 class="marquee-title">MeSTI <br />certified</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a10b3606cf04c79d3c41_icon-4.svg"
+                            src="asset/icons/no-seasoning.png"
                         />
-                        <h6 class="marquee-title">Empowering <br />you</h6>
+                        <h6 class="marquee-title">No extra <br />seasoning</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a11591de2d4d9f65f073_icon-5.svg"
+                            src="asset/icons/clock.png"
                         />
-                        <h6 class="marquee-title">Manually<br />processed</h6>
+                        <h6 class="marquee-title">Ready in <br />10 minutes</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a11f013435e77a1b78b0_icon-6.svg"
+                            src="asset/icons/recipe-book.png"
                         />
-                        <h6 class="marquee-title">No added <br />colors</h6>
+                        <h6 class="marquee-title">One recipe <br />since 2006</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a1284a3197a6f726b656_icon-7.svg"
+                            src="asset/icons/hibiscus.png"
                         />
-                        <h6 class="marquee-title">No dilution <br />or taste</h6>
+                        <h6 class="marquee-title">Bumiputera <br />owned</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a1371c5c7228c1b4a6ce_icon-8.svg"
+                            src="asset/icons/bottle-up.png"
                         />
-                        <h6 class="marquee-title">No chemicals <br />&amp; pesticides</h6>
+                        <h6 class="marquee-title">20,000+ bottles <br />sold online</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a156d00c8803af289546_icon-9.svg"
+                            src="asset/icons/wok.png"
                         />
-                        <h6 class="marquee-title">Preserves the <br />Environment</h6>
+                        <h6 class="marquee-title">Original <br />hawker taste</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a15f7d8adb6b9b015896_icon-10.svg"
+                            src="asset/icons/mortar.png"
                         />
-                        <h6 class="marquee-title">Certified <br />organic sources</h6>
+                        <h6 class="marquee-title">Penang <br />original recipe</h6>
                     </div>
                     <div class="marquee-item">
                         <img
                             alt=""
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b6a1371c5c7228c1b4a6ce_icon-8.svg"
+                            src="asset/icons/shop.png"
                         />
-                        <h6 class="marquee-title">Direct <br />from Farm</h6>
+                        <h6 class="marquee-title">Sold at Mydin <br />&amp; Sunshine</h6>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="product-section section-spacing">
+        <div class="product-section section-spacing" id="range">
             <div class="container w-container">
-                <div class="section-title text-center"><h2>Explore our menu</h2></div>
+                <div class="section-title text-center"><h2>Explore our range</h2></div>
                 <div class="w-dyn-list">
                     <div class="grid-product w-dyn-items" role="list">
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/classic-chicken-salad-with-croutons-and-parmesan"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">Classic Chicken Salad with Croutons and Parmesan</div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 58.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 78.00 USD
+                            <div class="w-dyn-item" role="listitem">
+                                <div class="product-item w-inline-block" data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85">
+                                    <div class="product-image-wrap">
+                                        <img alt="Sos Char Kuey Teow 1.5kg" class="product-image" loading="lazy" src="asset/1%20BOTOL%20SOS%20CKT%201.5KG%20BG%20MERAH%20OREN.png" />
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-name">Sos Char Kuey Teow 1.5kg</div>
+                                        <div class="product-calories">
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Size</div>
+                                        <div>1.5 kg</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Halal</div>
+                                        <div>JAKIM</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Cert</div>
+                                        <div>MeSTI</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">For</div>
+                                        <div>Char Koay Teow</div>
+                                    </div>
                                         </div>
                                     </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>23g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>241 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>24g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>28g</div>
-                                        </div>
+                                    <div class="buy-row">
+                                        <a class="buy-btn buy-shopee" href="https://my.shp.ee/dMm5i1A3" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a4 4 0 0 0-4 4v1H5.6a1 1 0 0 0-1 .92l-1.1 12.5A1.5 1.5 0 0 0 5 22h14a1.5 1.5 0 0 0 1.5-1.58L19.4 7.92a1 1 0 0 0-1-.92H16V6a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v1h-4V6a2 2 0 0 1 2-2zm0 7c1.9 0 3.2.8 3.2 2.1 0 1.2-.9 1.9-2.6 2.3-1.2.3-1.6.6-1.6 1 0 .4.4.7 1.2.7.7 0 1.4-.2 2.1-.6l.7 1.4c-.9.5-1.9.7-2.9.7-1.9 0-3.1-.9-3.1-2.2 0-1.2.9-1.9 2.6-2.3 1.2-.3 1.6-.5 1.6-1s-.5-.7-1.3-.7c-.7 0-1.4.2-2 .5l-.7-1.4c.9-.4 1.8-.5 2.8-.5z"/></svg><span>Shopee</span></a>
+                                        <a class="buy-btn buy-tiktok" href="https://vt.tiktok.com/ZS9S5aqXgBSUf-x22WG/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg><span>TikTok</span></a>
                                     </div>
                                 </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/mushroom-shrimp-scampi-with-sun-dried-tomatoes"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7de698fc9530169b7df4_menu-08.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">Chicken Fajitas with Guacamole and Cheddar Cheese</div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 47.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 68.00 USD
+                            </div>
+                            <div class="w-dyn-item" role="listitem">
+                                <div class="product-item w-inline-block" data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85">
+                                    <div class="product-image-wrap">
+                                        <img alt="Perencah Char Koay Teow 1kg" class="product-image" loading="lazy" src="asset/POUCH%20PERENCAH%20CKT%201%20KG%20-%20CHAT%20GPT.png" />
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-name">Perencah Char Koay Teow 1kg</div>
+                                        <div class="product-calories">
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Size</div>
+                                        <div>1 kg</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Halal</div>
+                                        <div>JAKIM</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Cert</div>
+                                        <div>MeSTI</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">For</div>
+                                        <div>Char Koay Teow</div>
+                                    </div>
                                         </div>
                                     </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>20g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>141 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>20g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>36g</div>
-                                        </div>
+                                    <div class="buy-row">
+                                        <a class="buy-btn buy-shopee" href="https://my.shp.ee/HSoeJk7W" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a4 4 0 0 0-4 4v1H5.6a1 1 0 0 0-1 .92l-1.1 12.5A1.5 1.5 0 0 0 5 22h14a1.5 1.5 0 0 0 1.5-1.58L19.4 7.92a1 1 0 0 0-1-.92H16V6a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v1h-4V6a2 2 0 0 1 2-2zm0 7c1.9 0 3.2.8 3.2 2.1 0 1.2-.9 1.9-2.6 2.3-1.2.3-1.6.6-1.6 1 0 .4.4.7 1.2.7.7 0 1.4-.2 2.1-.6l.7 1.4c-.9.5-1.9.7-2.9.7-1.9 0-3.1-.9-3.1-2.2 0-1.2.9-1.9 2.6-2.3 1.2-.3 1.6-.5 1.6-1s-.5-.7-1.3-.7c-.7 0-1.4.2-2 .5l-.7-1.4c.9-.4 1.8-.5 2.8-.5z"/></svg><span>Shopee</span></a>
+                                        <a class="buy-btn buy-tiktok" href="https://vt.tiktok.com/ZS9S5aash3qrf-CZSvQ/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg><span>TikTok</span></a>
                                     </div>
                                 </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/veggie-lentil-ziti-style-pasta-bake-with-roasted-veg"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7df30ee52119a746e3f8_menu-02.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">Veggie Lentil Ziti-Style Pasta Bake with Roasted Veg</div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 78.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 86.00 USD
+                            </div>
+                            <div class="w-dyn-item" role="listitem">
+                                <div class="product-item w-inline-block" data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85">
+                                    <div class="product-image-wrap">
+                                        <img alt="Perencah Char Koay Teow 250g" class="product-image" loading="lazy" src="asset/1%20BOTOL%20PES%20CKT%20250G%20-%20CHATGPT%201.png" />
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-name">Perencah Char Koay Teow 250g</div>
+                                        <div class="product-calories">
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Size</div>
+                                        <div>250 g</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Halal</div>
+                                        <div>JAKIM</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Cert</div>
+                                        <div>MeSTI</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">For</div>
+                                        <div>Char Koay Teow</div>
+                                    </div>
                                         </div>
                                     </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>14g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>145 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>12g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>50g</div>
-                                        </div>
+                                    <div class="buy-row">
+                                        <a class="buy-btn buy-shopee" href="https://my.shp.ee/pDZST86t" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a4 4 0 0 0-4 4v1H5.6a1 1 0 0 0-1 .92l-1.1 12.5A1.5 1.5 0 0 0 5 22h14a1.5 1.5 0 0 0 1.5-1.58L19.4 7.92a1 1 0 0 0-1-.92H16V6a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v1h-4V6a2 2 0 0 1 2-2zm0 7c1.9 0 3.2.8 3.2 2.1 0 1.2-.9 1.9-2.6 2.3-1.2.3-1.6.6-1.6 1 0 .4.4.7 1.2.7.7 0 1.4-.2 2.1-.6l.7 1.4c-.9.5-1.9.7-2.9.7-1.9 0-3.1-.9-3.1-2.2 0-1.2.9-1.9 2.6-2.3 1.2-.3 1.6-.5 1.6-1s-.5-.7-1.3-.7c-.7 0-1.4.2-2 .5l-.7-1.4c.9-.4 1.8-.5 2.8-.5z"/></svg><span>Shopee</span></a>
+                                        <a class="buy-btn buy-tiktok" href="https://vt.tiktok.com/ZS9S5aRQWBDwp-pbpUI/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg><span>TikTok</span></a>
                                     </div>
                                 </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/moroccan-lamb-tagine-with-eggplant-and-raisins"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e052013a73d73aeb3a4_menu-06.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">Moroccan lamb tagine with eggplant and raisins</div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 45.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 60.00 USD
+                            </div>
+                            <div class="w-dyn-item" role="listitem">
+                                <div class="product-item w-inline-block" data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85">
+                                    <div class="product-image-wrap">
+                                        <img alt="Perencah Char Koay Teow 45g" class="product-image" loading="lazy" src="asset/1%20BOX%20PES%20CKT%20SACHET%2045G%20-%20CHATGPT%201.png" />
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-name">Perencah Char Koay Teow 45g</div>
+                                        <div class="product-calories">
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Size</div>
+                                        <div>45 g</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Halal</div>
+                                        <div>JAKIM</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Cert</div>
+                                        <div>MeSTI</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">For</div>
+                                        <div>Char Koay Teow</div>
+                                    </div>
                                         </div>
                                     </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>23g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>320 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>20g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>46g</div>
-                                        </div>
+                                    <div class="buy-row">
+                                        <a class="buy-btn buy-shopee" href="https://my.shp.ee/eDZK7UM7" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a4 4 0 0 0-4 4v1H5.6a1 1 0 0 0-1 .92l-1.1 12.5A1.5 1.5 0 0 0 5 22h14a1.5 1.5 0 0 0 1.5-1.58L19.4 7.92a1 1 0 0 0-1-.92H16V6a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v1h-4V6a2 2 0 0 1 2-2zm0 7c1.9 0 3.2.8 3.2 2.1 0 1.2-.9 1.9-2.6 2.3-1.2.3-1.6.6-1.6 1 0 .4.4.7 1.2.7.7 0 1.4-.2 2.1-.6l.7 1.4c-.9.5-1.9.7-2.9.7-1.9 0-3.1-.9-3.1-2.2 0-1.2.9-1.9 2.6-2.3 1.2-.3 1.6-.5 1.6-1s-.5-.7-1.3-.7c-.7 0-1.4.2-2 .5l-.7-1.4c.9-.4 1.8-.5 2.8-.5z"/></svg><span>Shopee</span></a>
+                                        <a class="buy-btn buy-tiktok" href="https://vt.tiktok.com/ZS9S5a3rEakJK-2m01t/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg><span>TikTok</span></a>
                                     </div>
                                 </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/papaya-smoothie-for-weight-loss-low-fat-and-fodmap"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e6ff04e59f70786d03d_menu-10.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">
-                                        Papaya Smoothie for Weight Loss – Low Fat &amp; Low FODMAP
+                            </div>
+                            <div class="w-dyn-item" role="listitem">
+                                <div class="product-item w-inline-block" data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85">
+                                    <div class="product-image-wrap">
+                                        <img alt="Perencah Mi Goreng Mamak 250g" class="product-image" loading="lazy" src="asset/1%20BOTOL%20PES%20MGM%20250G%20-%20CHATGPT%201.png" />
                                     </div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 38.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 45.00 USD
+                                    <div class="product-info">
+                                        <div class="product-name">Perencah Mi Goreng Mamak 250g</div>
+                                        <div class="product-calories">
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Size</div>
+                                        <div>250 g</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Halal</div>
+                                        <div>JAKIM</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Cert</div>
+                                        <div>MeSTI</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">For</div>
+                                        <div>Mi Goreng Mamak</div>
+                                    </div>
                                         </div>
                                     </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>32g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>69 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>15g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>37g</div>
-                                        </div>
+                                    <div class="buy-row">
+                                        <a class="buy-btn buy-shopee" href="https://my.shp.ee/QDzFAJRG" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a4 4 0 0 0-4 4v1H5.6a1 1 0 0 0-1 .92l-1.1 12.5A1.5 1.5 0 0 0 5 22h14a1.5 1.5 0 0 0 1.5-1.58L19.4 7.92a1 1 0 0 0-1-.92H16V6a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v1h-4V6a2 2 0 0 1 2-2zm0 7c1.9 0 3.2.8 3.2 2.1 0 1.2-.9 1.9-2.6 2.3-1.2.3-1.6.6-1.6 1 0 .4.4.7 1.2.7.7 0 1.4-.2 2.1-.6l.7 1.4c-.9.5-1.9.7-2.9.7-1.9 0-3.1-.9-3.1-2.2 0-1.2.9-1.9 2.6-2.3 1.2-.3 1.6-.5 1.6-1s-.5-.7-1.3-.7c-.7 0-1.4.2-2 .5l-.7-1.4c.9-.4 1.8-.5 2.8-.5z"/></svg><span>Shopee</span></a>
+                                        <a class="buy-btn buy-tiktok" href="https://vt.tiktok.com/ZS9S5mYxHFG32-N6BwU/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg><span>TikTok</span></a>
                                     </div>
                                 </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/wellness-ginger-turmeric-shot-immunity-booster"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e7b497b63932221fafa_menu-09.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">Wellness Ginger Turmeric Shot (Immunity Booster)</div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 28.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 36.00 USD
+                            </div>
+                            <div class="w-dyn-item" role="listitem">
+                                <div class="product-item w-inline-block" data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85">
+                                    <div class="product-image-wrap">
+                                        <img alt="Perencah Nasi Goreng Kampung 230g" class="product-image" loading="lazy" src="asset/1%20BOTOL%20PES%20NGK%20250G%20-%20CHATGPT%202.png" />
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-name">Perencah Nasi Goreng Kampung 230g</div>
+                                        <div class="product-calories">
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Size</div>
+                                        <div>230 g</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Halal</div>
+                                        <div>JAKIM</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">Cert</div>
+                                        <div>MeSTI</div>
+                                    </div>
+                                    <div class="product-calorie-item">
+                                        <div class="product-calorie-title">For</div>
+                                        <div>Nasi Goreng Kampung</div>
+                                    </div>
                                         </div>
                                     </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>16g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>145 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>16g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>48g</div>
-                                        </div>
+                                    <div class="buy-row">
+                                        <a class="buy-btn buy-shopee" href="https://my.shp.ee/SYktcbyr" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a4 4 0 0 0-4 4v1H5.6a1 1 0 0 0-1 .92l-1.1 12.5A1.5 1.5 0 0 0 5 22h14a1.5 1.5 0 0 0 1.5-1.58L19.4 7.92a1 1 0 0 0-1-.92H16V6a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v1h-4V6a2 2 0 0 1 2-2zm0 7c1.9 0 3.2.8 3.2 2.1 0 1.2-.9 1.9-2.6 2.3-1.2.3-1.6.6-1.6 1 0 .4.4.7 1.2.7.7 0 1.4-.2 2.1-.6l.7 1.4c-.9.5-1.9.7-2.9.7-1.9 0-3.1-.9-3.1-2.2 0-1.2.9-1.9 2.6-2.3 1.2-.3 1.6-.5 1.6-1s-.5-.7-1.3-.7c-.7 0-1.4.2-2 .5l-.7-1.4c.9-.4 1.8-.5 2.8-.5z"/></svg><span>Shopee</span></a>
+                                        <a class="buy-btn buy-tiktok" href="https://vt.tiktok.com/ZS9S5mSWBfkcj-UGO34/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.85 5.85 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V9.01a7.35 7.35 0 0 0 4.29 1.37V7.3a4.29 4.29 0 0 1-3.34-1.48z"/></svg><span>TikTok</span></a>
                                     </div>
                                 </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/cornmeal-crust-hand-pie-huevos-rancheros"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e862f682a776a53e097_menu-11.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">Cornmeal Crust Hand Pie, Huevos Rancheros</div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 25.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 32.00 USD
-                                        </div>
-                                    </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>14g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>60 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>18g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>36g</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="product-item w-inline-block"
-                                data-w-id="12e1bb46-229f-9c47-a080-b16234dc9c85"
-                                href="/product/egg-spinach-and-feta-breakfast-2-count"
-                                ><div class="product-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="product-image"
-                                        data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                                        loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e9a1ac7951f5114a701_menu-01.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-name">Egg, Spinach and Feta Breakfast(2 count)</div>
-                                    <div class="product-price-wrap">
-                                        <div
-                                            class="product-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 15.00 USD
-                                        </div>
-                                        <div
-                                            class="product-price-compare"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 20.00 USD
-                                        </div>
-                                    </div>
-                                    <div class="product-calories">
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Carb:</div>
-                                            <div>26g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Calorie:</div>
-                                            <div>600 cal</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Fat:</div>
-                                            <div>46g</div>
-                                        </div>
-                                        <div class="product-calorie-item">
-                                            <div class="product-calorie-title">Protein:</div>
-                                            <div>35g</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="button product-button">View Product</div></a
-                            >
-                        </div>
-                    </div>
+                            </div>
+                                            </div>
                 </div>
             </div>
         </div>
@@ -1304,29 +1767,57 @@
                 <div class="w-layout-grid grid-action-box-simple">
                     <div class="action-box-simple-image-wrap" id="w-node-f64826f9-ba3c-88aa-cfd7-10f4af48cf8f-0abdf9f5">
                         <img
-                            alt=""
+                            alt="M’Dee Sos Char Kuey Teow 1.5kg beside Sos Mi Goreng Mamak 350g"
                             class="action-box-simple-image"
                             loading="eager"
-                            sizes="100vw"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bc4bf26fcb816f5f489fae_about-6.png"
-                            srcset="
-                                https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bc4bf26fcb816f5f489fae_about-6-p-500.png 500w,
-                                https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bc4bf26fcb816f5f489fae_about-6.png       668w
-                            "
+                            src="asset/COMBO%202%20BOTOL%20SOS%20MGM%20350G%20+%20CKT%20%201.5KG%20-%20CHATGPT%204.png"
                         />
                     </div>
                     <div class="action-box-simple-content" id="w-node-_1bde4cd3-8a7b-b884-5eb7-c1d3a1cc8eee-0abdf9f5">
+                        <div class="band-eyebrow">The M’Dee range</div>
                         <h3 class="action-box-simple-title">
-                            Nutritionally <span class="body-font">designed</span> meals you'll crave
+                            One bottle, every Penang favourite
                         </h3>
-                        <a class="button w-button" href="/shop">Get Started</a>
+                        <p class="band-lead">
+                            Char koay teow, mi goreng mamak, nasi goreng kampung and our sambal, all built on the
+                            same Penang recipe we have been bottling since 2006. Halal certified by JAKIM and made
+                            in a MeSTI certified kitchen. Open it, pour it, cook.
+                        </p>
+                        <ul class="band-points">
+                            <li class="band-point">
+                                <img alt="" class="band-point-icon" loading="lazy" src="asset/icons/color/penang-flag.png" />
+                                <span>Penang recipe since 2006</span>
+                            </li>
+                            <li class="band-point">
+                                <img alt="" class="band-point-icon" loading="lazy" src="asset/icons/color/no-seasoning.png" />
+                                <span>No extra seasoning</span>
+                            </li>
+                            <li class="band-point">
+                                <img alt="" class="band-point-icon" loading="lazy" src="asset/icons/color/wok.png" />
+                                <span>Made for the home wok</span>
+                            </li>
+                            <li class="band-point">
+                                <img alt="" class="band-point-icon" loading="lazy" src="asset/icons/color/bottle-up.png" />
+                                <span>45g sachets to 1.5kg</span>
+                            </li>
+                        </ul>
+                        <div class="band-actions">
+                            <a class="button w-button" href="#range">Shop now</a>
+                            <a
+                                class="button band-button-ghost w-button"
+                                href="https://wa.me/60164432630"
+                                rel="noopener"
+                                target="_blank"
+                                >Order on WhatsApp</a
+                            >
+                        </div>
                     </div>
                     <div class="decoration shape-10" id="w-node-_06960392-29ef-86fd-e63d-9a1040963576-0abdf9f5">
                         <img
                             alt=""
                             class="shape-10"
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b9659ebc9bf3332937a437_shape-11.svg"
+                            src="asset/icons/lemongrass.png"
                         />
                     </div>
                 </div>
@@ -1334,21 +1825,21 @@
         </div>
         <div class="product-section section-spacing-bottom">
             <div class="container w-container">
-                <div class="section-title text-center"><h2>Chef meal plans</h2></div>
+                <div class="section-title text-center"><h2>Combo sets</h2></div>
                 <div class="w-dyn-list">
                     <div class="grid-meal w-dyn-items" role="list">
                         <div class="w-dyn-item" role="listitem">
                             <a
                                 class="product-meal w-inline-block"
                                 data-w-id="81fb2937-f12c-b8c8-eb26-e23ebe1c2c86"
-                                href="/product/maintenance-meal-plan"
+                                href="/home-shop.html"
                                 ><div class="product-meal-image-wrap">
                                     <img
                                         alt=""
                                         class="product-meal-image"
                                         data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
                                         loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e19af401454161ae0cf_menu-07.jpg"
+                                        src="asset/COMBO%202%20SOS%20CKT%20350G%20-%20CHATGPT%201.png"
                                         style="
                                             -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
                                                 rotateY(0) rotateZ(0) skew(0, 0);
@@ -1362,37 +1853,25 @@
                                     />
                                 </div>
                                 <div class="product-meal-detail">
-                                    <div class="product-meal-title">Maintenance Meal Plan</div>
-                                    <p>4 meals per month</p>
-                                    <p class="product-meal-content">
-                                        The wise man therefore always holds in these matters to this principle of
-                                        selection.
-                                    </p>
-                                    <div class="product-meal-price-wrap">
-                                        <div
-                                            class="product-meal-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 999.00 USD
-                                        </div>
-                                        <div><br />/Meal</div>
-                                    </div>
+                                    <div class="product-meal-title">Combo Sos Char Kuey Teow</div>
+                                    <p>2 &times; 350g bottles</p>
+                                    <p class="product-meal-content">For the household that goes through a bottle a month. Two of our best sellers in one set.</p>
                                 </div>
-                                <div class="button product-button">Choose plan</div></a
+                                <div class="button product-button">Order set</div></a
                             >
                         </div>
                         <div class="w-dyn-item" role="listitem">
                             <a
                                 class="product-meal w-inline-block"
                                 data-w-id="81fb2937-f12c-b8c8-eb26-e23ebe1c2c86"
-                                href="/product/keto-meal-plan"
+                                href="/home-shop.html"
                                 ><div class="product-meal-image-wrap">
                                     <img
                                         alt=""
                                         class="product-meal-image"
                                         data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
                                         loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e2dfda03cbdfdda5799_menu-05.jpg"
+                                        src="asset/COMBO%202%20BOTOL%20PERENCAH%20CKT%20MGM%20250G%20-%20CHATGPT%201.png"
                                         style="
                                             -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
                                                 rotateY(0) rotateZ(0) skew(0, 0);
@@ -1406,37 +1885,25 @@
                                     />
                                 </div>
                                 <div class="product-meal-detail">
-                                    <div class="product-meal-title">Keto Meal Plan</div>
-                                    <p>3 meals per week</p>
-                                    <p class="product-meal-content">
-                                        The wise man therefore always holds in these matters to this principle of
-                                        selection.
-                                    </p>
-                                    <div class="product-meal-price-wrap">
-                                        <div
-                                            class="product-meal-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 799.00 USD
-                                        </div>
-                                        <div><br />/Meal</div>
-                                    </div>
+                                    <div class="product-meal-title">Combo Perencah CKT + Mi Goreng Mamak</div>
+                                    <p>2 &times; 250g jars</p>
+                                    <p class="product-meal-content">Two pastes, two dishes. Roughly ten servings out of each jar.</p>
                                 </div>
-                                <div class="button product-button">Choose plan</div></a
+                                <div class="button product-button">Order set</div></a
                             >
                         </div>
                         <div class="w-dyn-item" role="listitem">
                             <a
                                 class="product-meal w-inline-block"
                                 data-w-id="81fb2937-f12c-b8c8-eb26-e23ebe1c2c86"
-                                href="/product/weight-loss-meal-plan"
+                                href="/home-shop.html"
                                 ><div class="product-meal-image-wrap">
                                     <img
                                         alt=""
                                         class="product-meal-image"
                                         data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
                                         loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7e5723f820a30f0c759c_menu-03.jpg"
+                                        src="asset/COMBO%202%20SAMBAL%20PETAI%20BILIS%2060G%20TANGAN%20-%20CHATGPT%201.jpg"
                                         style="
                                             -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
                                                 rotateY(0) rotateZ(0) skew(0, 0);
@@ -1450,23 +1917,11 @@
                                     />
                                 </div>
                                 <div class="product-meal-detail">
-                                    <div class="product-meal-title">Weight Loss Meal Plan</div>
-                                    <p>4 meals per day</p>
-                                    <p class="product-meal-content">
-                                        The wise man therefore always holds in these matters to this principle of
-                                        selection.
-                                    </p>
-                                    <div class="product-meal-price-wrap">
-                                        <div
-                                            class="product-meal-price"
-                                            data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                                        >
-                                            $ 99.00 USD
-                                        </div>
-                                        <div><br />/Meal</div>
-                                    </div>
+                                    <div class="product-meal-title">Combo Sambal Petai Bilis + Talang Masin</div>
+                                    <p>2 &times; 60g pouches</p>
+                                    <p class="product-meal-content">Both sambal, ready to eat straight from the pouch. No cooking needed.</p>
                                 </div>
-                                <div class="button product-button">Choose plan</div></a
+                                <div class="button product-button">Order set</div></a
                             >
                         </div>
                     </div>
@@ -1478,23 +1933,21 @@
                 <div class="w-layout-grid grid-story">
                     <div class="story-content" id="w-node-b8c5f1b3-35bb-efba-689b-77a9308b6799-0abdf9f5">
                         <div class="section-title">
-                            <h2>Eat healthy, be <span class="body-font">nutrition</span> wealthy</h2>
+                            <h2>Hawker taste, home kitchen</h2>
                             <p>
-                                That they cannot foresee the pain and trouble that are bound to ensue; and equal blame
-                                belongs to those who fail in their duty through weakness of will, which is the same as
-                                saying through shrinking from toil and pain.
+                                Every M’Dee bottle rests on one recipe that Mohd Rosidi spent years balancing
+                                before he sold a single jar. You are not buying a shortcut. You are buying the part
+                                that takes longest to get right.
                             </p>
                         </div>
                         <ol class="story-list w-list-unstyled" role="list">
-                            <li class="about-list-item">~  We denounce with righteous indignation</li>
-                            <li class="about-list-item">~ Temporibus autem quibusdam et aut officiis.</li>
-                            <li class="about-list-item">
-                                ~  Ut reiciendis voluptatibus maiores alias consequatur aut.
-                            </li>
-                            <li class="about-list-item">~  Quas molestias excepturi sint occaecati cupiditate.</li>
-                            <li class="about-list-item">~  Itaque earum rerum hic tenetur a sapiente delectus.</li>
+                            <li class="about-list-item">~ One recipe, unchanged since 2006</li>
+                            <li class="about-list-item">~ Halal certified by JAKIM</li>
+                            <li class="about-list-item">~ MeSTI certified by the Ministry of Health</li>
+                            <li class="about-list-item">~ Made in Tasek Gelugor, Pulau Pinang</li>
+                            <li class="about-list-item">~ No extra seasoning needed</li>
                         </ol>
-                        <a class="button w-button" href="/our-story">View our story</a>
+                        <a class="button w-button" href="/our-story.html">View our story</a>
                     </div>
                     <div class="story-image-wrap" id="w-node-_6e284c07-427e-f9f2-8af9-5743d3ca1965-0abdf9f5">
                         <div class="w-layout-grid grid-story-image">
@@ -1514,7 +1967,7 @@
                                         alt=""
                                         class="shape-9"
                                         loading="lazy"
-                                        src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b151caff9b9388f05cc6fc_shape-05.svg"
+                                        src="asset/icons/lemongrass.png"
                                         style="
                                             -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
                                                 rotateY(0) rotateZ(359deg) skew(0, 0);
@@ -1565,14 +2018,14 @@
                     alt=""
                     class="shape-1"
                     loading="lazy"
-                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b143c424c7a47360013e71_shape-01.svg"
+                    src="asset/icons/chilli.png"
                 />
             </div>
             <div class="decoration shaoe-5">
                 <img
                     alt=""
                     loading="lazy"
-                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b15006ef2fc2437ed52b01_shape-04.svg"
+                    src="asset/icons/anise.png"
                 />
             </div>
         </div>
@@ -1589,27 +2042,26 @@
                         <div class="tab-content-wrap w-tab-content">
                             <div class="w-tab-pane" data-w-tab="Tab 1">
                                 <p class="tab-content">
-                                    "There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have in some form, by injected humour, or randomised words which"
+                                    Halal certified by JAKIM and MeSTI certified by the Ministry of Health, on every
+                                    batch and every bottle.
                                 </p>
                             </div>
                             <div class="w-tab-pane" data-w-tab="Tab 2">
                                 <p class="tab-content">
-                                    "Generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
-                                    always free from repetition, injected humour, or non-characteristic"
+                                    Made at Kompleks Perda Food Park in Tasek Gelugor, Pulau Pinang, at thousands of
+                                    bottles a month.
                                 </p>
                             </div>
                             <div class="w-tab-pane w--tab-active" data-w-tab="Tab 3">
                                 <p class="tab-content">
-                                    "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-                                    minus id quod maxime placeat facere possimus, omnis voluptas assumenda"
+                                    One recipe, refined since 2006. Nothing about it has changed since the first five
+                                    hundred bottles.
                                 </p>
                             </div>
                             <div class="w-tab-pane" data-w-tab="Tab 4">
                                 <p class="tab-content">
-                                    "shrinking from toil and pain. These cases are perfectly simple and easy to
-                                    distinguish. In a free hour, when our power of choice is untrammelled and when
-                                    nothing"
+                                    On the shelf at Mydin, Sunshine and Agrobazaar, and online at Shopee, Lazada
+                                    and TikTok Shop.
                                 </p>
                             </div>
                         </div>
@@ -1619,25 +2071,25 @@
                                     alt=""
                                     class="tab-link-image"
                                     loading="lazy"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b68de49b61696b2feb78b1_client-5.svg" /></a
+                                    src="asset/icons/chilli.png" /></a
                             ><a class="tab-link w-inline-block w-tab-link" data-w-tab="Tab 2"
                                 ><img
                                     alt=""
                                     class="tab-link-image"
                                     loading="lazy"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b68ce5d00c8874412841f6_client-2.svg" /></a
+                                    src="asset/icons/anise.png" /></a
                             ><a class="tab-link w-inline-block w-tab-link w--current" data-w-tab="Tab 3"
                                 ><img
                                     alt=""
                                     class="tab-link-image"
                                     loading="lazy"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b68cf03d21d060a96c1fee_client-3.svg" /></a
+                                    src="asset/icons/pandan.png" /></a
                             ><a class="tab-link w-inline-block w-tab-link" data-w-tab="Tab 4"
                                 ><img
                                     alt=""
                                     class="tab-link-image"
                                     loading="lazy"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b68cf91000ff1b578b72b8_client-4.svg"
+                                    src="asset/icons/garlic.png"
                             /></a>
                         </div>
                     </div>
@@ -1646,7 +2098,7 @@
                             alt=""
                             class="shape-11"
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b9618420faef0fdd9059b9_shape-10.svg"
+                            src="asset/icons/garlic.png"
                         />
                     </div>
                     <div class="decoration shape-6">
@@ -1654,7 +2106,7 @@
                             alt=""
                             class="shape-6"
                             loading="lazy"
-                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b962fc5701897ab218f369_shape-09.svg"
+                            src="asset/icons/anise.png"
                         />
                     </div>
                 </div>
@@ -1662,17 +2114,19 @@
         </div>
         <div class="team-section section-spacing-bottom">
             <div class="container w-container">
-                <div class="section-title text-center"><h2>Meet our chefs</h2></div>
+                <div class="section-title text-center"><h2>Meet the founder</h2></div>
                 <div class="w-dyn-list">
                     <div class="grid-team-page w-dyn-items" role="list">
-                        <div class="w-dyn-item" role="listitem">
+<!-- PLACEHOLDER PHOTO: still a stock image from the template.
+                             Replace src with a real photo of Mohd Rosidi before publishing. -->
+                                                <div class="w-dyn-item" role="listitem">
                             <a
                                 class="team-item w-inline-block"
                                 data-w-id="7469cc41-ab98-b6ac-f140-6b6a1baa7c5c"
-                                href="/author/judy-nguyen"
+                                href="/our-story.html"
                                 ><div class="team-image-wrap">
                                     <img
-                                        alt=""
+                                        alt="Mohd Rosidi Abdul Rashid, founder of M’Dee"
                                         class="team-image round"
                                         loading="eager"
                                         src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba84dc2013a707ddaeedcd_team-6.jpg"
@@ -1688,91 +2142,11 @@
                                         "
                                     />
                                 </div>
-                                <h6 class="team-title">Judy Nguyen</h6>
-                                <p>Executive Sous Chef</p></a
+                                <h6 class="team-title">Mohd Rosidi Abdul Rashid</h6>
+                                <p>Founder, MDEE Enterprise</p></a
                             >
                         </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="team-item w-inline-block"
-                                data-w-id="7469cc41-ab98-b6ac-f140-6b6a1baa7c5c"
-                                href="/author/billy-vasquez"
-                                ><div class="team-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="team-image round"
-                                        loading="eager"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62b53af09a3cf14f539fac9e_team-3.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <h6 class="team-title">Billy Vasquez</h6>
-                                <p>Director of Nutrition</p></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="team-item w-inline-block"
-                                data-w-id="7469cc41-ab98-b6ac-f140-6b6a1baa7c5c"
-                                href="/author/carolyn-ortiz"
-                                ><div class="team-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="team-image round"
-                                        loading="eager"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba85d398fc95e5029bae8b_team-5.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <h6 class="team-title">Carolyn Ortiz</h6>
-                                <p>Sous Chef</p></a
-                            >
-                        </div>
-                        <div class="w-dyn-item" role="listitem">
-                            <a
-                                class="team-item w-inline-block"
-                                data-w-id="7469cc41-ab98-b6ac-f140-6b6a1baa7c5c"
-                                href="/author/bryan-knight"
-                                ><div class="team-image-wrap">
-                                    <img
-                                        alt=""
-                                        class="team-image round"
-                                        loading="eager"
-                                        src="https://cdn.prod.website-files.com/62b14afe3c1bf49d35ec8beb/62ba84f816476095e6686e81_team-1.jpg"
-                                        style="
-                                            -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                                                rotateY(0) rotateZ(0) skew(0, 0);
-                                            -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                                                rotateZ(0) skew(0, 0);
-                                        "
-                                    />
-                                </div>
-                                <h6 class="team-title">Bryan Knight</h6>
-                                <p>Sous Chef</p></a
-                            >
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1787,101 +2161,43 @@
                                     alt=""
                                     class="logo"
                                     loading="lazy"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62bfeeaf622dd076e2779deb_bewellfed.svg"
+                                    src="asset/logo-web.png"
                             /></a>
                             <div class="footer-app">
-                                <p class="footer-app-title">Download the beWellfed app today.</p>
-                                <div class="footer-app-wrap">
-                                    <a class="w-inline-block" href="#"
-                                        ><img
-                                            alt=""
-                                            class="app-logo"
-                                            loading="lazy"
-                                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b18f0e084a2ad916a2f207_app-store.svg" /></a
-                                    ><a class="w-inline-block" href="#"
-                                        ><img
-                                            alt=""
-                                            class="app-logo"
-                                            loading="lazy"
-                                            src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b18ee79d9385eea155d0c0_play-store.svg"
-                                    /></a>
-                                </div>
+                                <p class="footer-app-title">Find us on Shopee, Lazada, TikTok Shop and at Mydin, Sunshine and Agrobazaar.</p>
                             </div>
                         </div>
                         <div class="footer-links">
                             <div class="footer-links-block" id="w-node-ed138bd9-6e00-f035-78ea-10fd8591a269-8591a259">
                                 <a class="footer-link" href="/">Home</a
-                                ><a aria-current="page" class="footer-link w--current" href="/home-shop">Home Shop</a
-                                ><a class="footer-link" href="/our-menu">Our Menu (CMS)</a
-                                ><a class="footer-link" href="/shop">Shop (Ecom)</a
-                                ><a class="footer-link" href="/recipe">Recipes</a>
+                                ><a aria-current="page" class="footer-link w--current" href="/home-shop.html">Home Shop</a
+                                ><a class="footer-link" href="/home-shop.html">Products (CMS)</a
+                                ><a class="footer-link" href="/home-shop.html">Shop (Ecom)</a
+                                ><a class="footer-link" href="/recipes.html">Recipes</a>
                             </div>
                             <div class="footer-links-block" id="w-node-ed138bd9-6e00-f035-78ea-10fd8591a272-8591a259">
-                                <a class="footer-link" href="/our-story">Our Story</a
-                                ><a class="footer-link" href="/how-it-works">How It Works</a
-                                ><a class="footer-link" href="/our-chef">Our Chef</a
-                                ><a class="footer-link" href="/location">Locations</a
-                                ><a class="footer-link" href="/contact">Contact</a>
-                            </div>
-                            <div class="footer-links-block" id="w-node-_3627c1cd-8c63-c1ce-1307-d03c70917eff-8591a259">
-                                <a class="footer-link" href="/utility-pages/style-guide">Style Guide</a
-                                ><a class="footer-link" href="/utility-pages/instructions">Instructions</a
-                                ><a class="footer-link" href="/utility-pages/licenses">Licenses</a
-                                ><a class="footer-link" href="/utility-pages/changelog">Changelog</a>
+                                <a class="footer-link" href="/our-story.html">Our Story</a
+                                                                ><a class="footer-link" href="/how-it-works.html">How To Cook</a
+                                ><a class="footer-link" href="/our-story.html">Our Founder</a
+                                ><a class="footer-link" href="/home-shop.html">Where To Buy</a
+                                ><a class="footer-link" href="/contact.html">Contact</a>
                             </div>
                         </div>
                     </div>
                     <div class="footer-contact" id="w-node-ed138bd9-6e00-f035-78ea-10fd8591a27b-8591a259">
-                        <div>Call for order:</div>
-                        <h4>+1 2586 5892</h4>
-                        <p>hello@example.com</p>
-                        <p class="footer-address">119 Tanglewood Lane<br />Gulfport, MS 39503</p>
+                        <!-- TO VERIFY: phone and address below are from a 2017 listing for MDEE Enterprise -->
+                        <div>Call or WhatsApp:</div>
+                        <h4>016-4432630</h4>
+                        <p>MDEE Enterprise</p>
+                        <p class="footer-address">
+                            No. 28, Blok C, Kompleks Perda Food Park,<br />Taman Industri Asas Tani, Kubang
+                            Menerong,<br />13300 Tasek Gelugor, Pulau Pinang
+                        </p>
                     </div>
                 </div>
                 <div class="w-layout-grid grid-footer-copyright">
                     <div class="footer-copyright-center">
-                        Designed by <a href="https://www.webestica.com" target="_blank">Webestica,</a> Powered by
-                        <a href="https://webflow.com" target="_blank">Webflow</a>
-                    </div>
-                    <div class="footer-social-icons">
-                        <a class="footer-social-icon-link w-inline-block" href="https://facebook.com/" target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b15a927c561db22a30f531_facebook.svg"
-                                width="18" /></a
-                        ><a
-                            class="footer-social-icon-link w-inline-block"
-                            href="https://www.instagram.com/"
-                            target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b15a9dff9b939f655ce9cd_instagram-dark.svg" /></a
-                        ><a class="footer-social-icon-link w-inline-block" href="https://pinterest.com/" target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b193604301b966d8e23a05_pinterest.svg" /></a
-                        ><a
-                            class="footer-social-icon-link w-inline-block"
-                            href="https://www.linkedin.com/"
-                            target="_blank"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b1934c7ec46d60347d4e38_linkedin.svg" /></a
-                        ><a class="footer-social-icon-link w-inline-block" href="https://twitter.com/"
-                            ><img
-                                alt=""
-                                class="footer-social-icon"
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b15aa6579cfcbe089a8cd0_twitter-dark.svg"
-                        /></a>
+                        &copy; 2026 MDEE Enterprise. All rights reserved.
                     </div>
                 </div>
             </div>
@@ -1890,7 +2206,7 @@
                     alt=""
                     class="shape-6"
                     loading="lazy"
-                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b195f3d08db6cdb97ac5e1_shape-07.svg"
+                    src="asset/icons/pandan.png"
                 />
             </div>
             <div class="decoration shape-7">
@@ -1898,10 +2214,23 @@
                     alt=""
                     class="shape-7"
                     loading="lazy"
-                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b19709084a2a4746a326da_29%20(2).svg"
+                    src="asset/icons/chilli.png"
                 />
             </div>
         </section>
+        <!-- TO VERIFY: WhatsApp number 016-4432630 (wa.me/60164432630) -->
+        <a
+            aria-label="Chat with M’Dee on WhatsApp"
+            class="wa-float"
+            href="https://wa.me/60164432630"
+            rel="noopener"
+            target="_blank"
+        >
+            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 110.9L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+            <span class="wa-label">WhatsApp us</span>
+        </a>
         <script
             crossorigin="anonymous"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
