@@ -602,6 +602,47 @@
             .buy-tiktok {
                 border-color: rgba(74, 16, 20, 0.4);
             }
+            /* Styled food photography frames a quiet, readable centre. */
+            .hero-bg-section {
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+                background: #191817;
+            }
+            .hero-bg-section::before,
+            .hero-bg-section::after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                width: 44%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                pointer-events: none;
+            }
+            .hero-bg-section::before {
+                left: 0;
+                background-image: linear-gradient(90deg, rgba(25, 24, 23, 0.05), rgba(25, 24, 23, 0.15) 38%, #191817 100%), url("asset/story/studio-noodles.jpg");
+                background-position: center, center 66%;
+            }
+            .hero-bg-section::after {
+                right: 0;
+                background-image: linear-gradient(90deg, #191817, rgba(25, 24, 23, 0.22) 62%, rgba(25, 24, 23, 0.12)), url("asset/story/studio-fried-rice.jpg");
+                background-position: center, center 72%;
+            }
+            .hero-bg-section .hero-bg-title {
+                color: #fff5e6;
+            }
+            .hero-bg-section .hero-button {
+                background: #fff5e6;
+                border-color: #fff5e6;
+                color: var(--dark-green);
+            }
+            .hero-bg-section .hero-button:hover {
+                background: #ead8bd;
+                border-color: #ead8bd;
+            }
             /* Page hero on smaller screens: the template left a big empty
                band above the headline */
             @media screen and (max-width: 991px) {
@@ -614,6 +655,17 @@
                 .hero-bg-section {
                     padding-top: 38px;
                     padding-bottom: 44px;
+                }
+                .hero-bg-section::before,
+                .hero-bg-section::after {
+                    width: 58%;
+                    opacity: 0.55;
+                }
+                .hero-bg-section::before {
+                    left: -8%;
+                }
+                .hero-bg-section::after {
+                    right: -8%;
                 }
                 .button.hero-button {
                     margin-top: 28px;
@@ -849,6 +901,48 @@
                filter off it. Certification marks stay untouched. */
             img[src*="icons/color"] {
                 filter: none !important;
+            }
+            /* Food photography keeps the original overlapping collage proportions. */
+            #hawker-story .story-image-1,
+            #hawker-story .story-image-2,
+            #hawker-story .story-image-3 {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+            #hawker-story .story-image-1 {
+                aspect-ratio: 9 / 10;
+                object-position: center 72%;
+            }
+            #hawker-story .story-image-2 {
+                width: calc(100% - 30px);
+                aspect-ratio: 8 / 7;
+                object-position: center 68%;
+            }
+            #hawker-story .story-image-3 {
+                aspect-ratio: 4 / 5;
+                object-position: center 78%;
+            }
+            .story-photo-credits {
+                margin-top: 18px;
+                color: #755b5d;
+                font-size: 12px;
+                line-height: 1.6;
+            }
+            .story-photo-credits summary {
+                display: list-item;
+                width: fit-content;
+                cursor: pointer;
+            }
+            .story-photo-credits ul {
+                margin: 8px 0 0;
+                padding-left: 18px;
+            }
+            .story-photo-credits a {
+                color: inherit;
+                text-decoration: underline;
+                text-underline-offset: 2px;
             }
         </style>
     </head>
@@ -1928,7 +2022,7 @@
                 </div>
             </div>
         </div>
-        <div class="story-section section-spacing-bottom" data-w-id="3ffbd122-3557-c53b-3b70-909925b72987">
+        <div class="story-section section-spacing-bottom" id="hawker-story" data-w-id="3ffbd122-3557-c53b-3b70-909925b72987">
             <div class="container w-container">
                 <div class="w-layout-grid grid-story">
                     <div class="story-content" id="w-node-b8c5f1b3-35bb-efba-689b-77a9308b6799-0abdf9f5">
@@ -1954,15 +2048,13 @@
                             <div class="story-image-left" id="w-node-da5525ab-ddb2-d535-f358-271413ce30c5-0abdf9f5">
                                 <div class="stroy-image-wrap">
                                     <img
-                                        alt=""
+                                        alt="Styled stir-fried noodles with red chillies on a matte black plate"
                                         class="story-image-1"
-                                        loading="eager"
-                                        sizes="(max-width: 479px) 94vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 95vw"
-                                        src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b58e3f0337567166768e85_about-7.jpg"
-                                        srcset="
-                                            https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b58e3f0337567166768e85_about-7-p-500.jpeg 500w,
-                                            https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b58e3f0337567166768e85_about-7.jpg        600w
-                                        "
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="1200"
+                                        height="1800"
+                                        src="asset/story/studio-noodles.jpg"
                                     /><img
                                         alt=""
                                         class="shape-9"
@@ -1981,23 +2073,24 @@
                                     />
                                 </div>
                                 <img
-                                    alt=""
+                                    alt="Red chillies, garlic and chilli flakes arranged on a dark studio backdrop"
                                     class="story-image-2"
-                                    loading="eager"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b58e4ec00c48eb30366b2e_about-9.jpg"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="1200"
+                                    height="1800"
+                                    src="asset/story/studio-chillies.jpg"
                                 />
                             </div>
                             <div class="story-image-right" id="w-node-_75a22a9a-351f-b6c9-f812-ecc78384dd78-0abdf9f5">
                                 <img
-                                    alt=""
+                                    alt="Fried rice topped with a sunny-side-up egg in a ceramic bowl"
                                     class="story-image-3"
-                                    loading="eager"
-                                    sizes="100vw"
-                                    src="https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b58f12c8704a041623795f_about-8.jpg"
-                                    srcset="
-                                        https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b58f12c8704a041623795f_about-8-p-500.jpeg 500w,
-                                        https://cdn.prod.website-files.com/62b03a7e084ea567885272c1/62b58f12c8704a041623795f_about-8.jpg        600w
-                                    "
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="1200"
+                                    height="1680"
+                                    src="asset/story/studio-fried-rice.jpg"
                                 />
                                 <div class="no-badge no-badge-about">
                                     <img
@@ -2010,6 +2103,14 @@
                                 </div>
                             </div>
                         </div>
+                        <details class="story-photo-credits">
+                            <summary>Photo credits</summary>
+                            <ul>
+                                <li>Noodles (hero and collage): <a href="https://unsplash.com/photos/pasta-dish-on-black-plate-pbc2wXbQYpI">ikhsan baihaqi</a>, <a href="https://unsplash.com/license">Unsplash License</a>.</li>
+                                <li>Chillies and garlic: <a href="https://www.pexels.com/photo/red-chili-peppers-and-garlic-on-black-surface-32447120/">Sofia Ansorena</a>, <a href="https://www.pexels.com/license/">Pexels License</a>.</li>
+                                <li>Fried rice (hero and collage): <a href="https://www.pexels.com/photo/fried-rice-with-fried-egg-in-a-bowl-5409019/">Momo King</a>, <a href="https://www.pexels.com/license/">Pexels License</a>.</li>
+                            </ul>
+                        </details>
                     </div>
                 </div>
             </div>
